@@ -11,6 +11,12 @@ class App extends Component {
       songs: []    
     }
   }
+  
+  componentDidMount(){
+    fetch('http://localhost:3001/api/songs')
+      .then(response => response.json())
+      .then(songs => this.setState({songs}))
+  }
 
   render() {
     return (
