@@ -3,18 +3,15 @@ import Songs from './Songs'
 import './App.css';
 
 
-const songs = [
-  {
-    name: "Imagine",
-    artist: "John Lennon"
-  },
-  {
-    name: "If I Should Fall From the Grace of God",
-    artist: "The Pogues"
-  }
-]
-
 class App extends Component {
+ 
+  constructor() {
+    super()
+    this.state = {
+      songs: []    
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,12 +20,12 @@ class App extends Component {
           <h1 className="App-title">Welcome to the Tab Factory</h1>
         </header>
         <div className="App-intro">
-        <Songs songs={songs}/>
-         Let make a tab!!!
+        <Songs songs={this.state.songs}/>
         </div>
       </div>
     );
   }
+
 }
 
 export default App;
