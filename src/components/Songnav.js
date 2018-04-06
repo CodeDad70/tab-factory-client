@@ -1,18 +1,7 @@
   import React from 'react';
 
-  const Songnav = ({song}) => (
-    <div>
-    
-    
-    
-    
-      
-      
-      <h3> {song.name} </h3>
-        <p> By: {song.artist} </p>
-      
-
-    </div>  
+  const Songnav = ({song}) => (   
+    <h3> <i>{song.name}</i> by {song.artist} </h3>  
   )
 
   export default Songnav;

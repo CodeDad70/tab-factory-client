@@ -27,7 +27,7 @@ class App extends Component {
           <h1> Select a Song : </h1>
         </header>
         <div className="App-intro">
-        <Songs songs={this.state.songs}/>
+          <Songs songs={this.state.songs}/>
         </div>
       </div>
     );

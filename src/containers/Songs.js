@@ -1,14 +1,12 @@
 import React from 'react';
 import Songnav from '../components/Songnav'
+import './App.css'
 
-const Songs=(props) => (
-  
+const Songs=(props) => ( 
   <div>
     {props.songs.map (song => 
-    <div key={song.id} className="App-header"  >
-      <Songnav song={song}/>
-    </div>
-    )};
+      <Songnav key={song.id} song={song}/>  
+    )}
   </div>
 );
 
