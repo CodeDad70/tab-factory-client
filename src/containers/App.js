@@ -24,6 +24,7 @@ class App extends Component {
         <header className="App-header">
           {/* <img src={} className="" alt="" /> */}
           <h1 className="App-title">Welcome to the Tab Factory</h1>
+          <h1> Select a Song : </h1>
         </header>
         <div className="App-intro">
         <Songs songs={this.state.songs}/>
