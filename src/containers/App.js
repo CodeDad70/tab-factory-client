@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Songs from './Songs'
+import Tabform from './Tabform';
 import './App.css';
 
 
@@ -29,6 +30,8 @@ class App extends Component {
         <div className="App-intro">
           <Songs songs={this.state.songs}/>
         </div>
+
+        <Tabform/>
       </div>
     );
   }
