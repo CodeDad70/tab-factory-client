@@ -28,3 +28,8 @@
 .lyrics {
   width: 800px;
 }
+
+.chords {
+  background: transparent;
+  border: none;
+}
