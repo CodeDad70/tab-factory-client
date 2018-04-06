@@ -4,7 +4,7 @@ const Songs=(props) => (
   
   <div>
     {props.songs.map (song => 
-      <songNav song={song}/>
+      <Songnav song={song}/>
     )};
   </div>
 );

@@ -1,6 +1,6 @@
   import React from 'react';
 
-  const songNav = ({song}) => (
+  const Songnav = ({song}) => (
 
     <div>
       <h1> Select a Song : </h1>
@@ -9,7 +9,7 @@
         <h3> {song.name} </h3>
         <p> By: {song.artist} </p>
       </div>
-      
+
     </div>
 
   )
