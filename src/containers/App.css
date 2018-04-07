@@ -1,16 +1,17 @@
 
+.Sidebar {
+  width: 25%;
+  background-color: #222;
+  float: left;
+  color: white;
+  padding: 15px;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
 .App-title {
   font-size: 1.5em;
@@ -27,6 +28,10 @@
 
 .lyrics {
   width: 800px;
+}
+
+.songform {
+  width: 100px;
 }
 
 .chords {
