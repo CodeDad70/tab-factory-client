@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Songs from '../containers/Songs'
 import Songform from '../containers/Songform';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../stylesheets/App.css';
 
 class App extends Component {
  
   render() {
     return (
+      <Router>
       <div>
 
         <div className = "songtab">
@@ -22,6 +24,8 @@ class App extends Component {
           {/* <img src={} className="" alt="" /> */} 
           <h3> Select a Song : </h3>       
           <Songs/>
+         
+          
         </div>
 
         <div className = "New-song">
@@ -31,8 +35,11 @@ class App extends Component {
         
 
       </div>  
+      </Router>
     );
   }
 }
 
 export default App;
+
+
