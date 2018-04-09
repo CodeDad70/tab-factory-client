@@ -1,15 +1,22 @@
+.App-layout {
+  background-color: #052266;
+}
+
 
 .Sidebar {
-  width: 25%;
   background-color: #222;
-  float: left;
   color: white;
-  padding: 15px;
+  float: left;
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  clear:left;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 30px;
 }
 
 
@@ -42,9 +49,18 @@
 .songtab {
   width:70%;
   height:100%;
-  background-color: #87b5ff;
+  background-color: #052266;
   float: left;
-  color: #222;
+  color: rgb(255, 255, 255);
   padding: 15px;
 }
 
+.Logo {
+  
+  line-height: 5px;
+  float: left;
+  padding-left: 15px;
+  background-color: #87b5ff;
+  width: 25%;
+  
+}

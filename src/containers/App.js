@@ -8,10 +8,15 @@ class App extends Component {
   render() {
     return (
       <div>
+        
+        <div className = "Logo">
+          <h1> The Tab Factory 
+          <img src = "gear-logo-icon-92970.png" width="30px" height = "30px" alt="Gear Logo" className = "App-logo"/></h1><br/>
+        </div>
+        
         <div className="Sidebar">    
-          {/* <img src={} className="" alt="" /> */}
-          <h1> The Tab Factory</h1>
-          <h2> Select a Song : </h2>       
+          {/* <img src={} className="" alt="" /> */} 
+          <h3> Select a Song : </h3>       
           <Songs/>
           <Songform/>
         </div>
@@ -19,11 +24,7 @@ class App extends Component {
         <div className = "songtab">
           Test
         </div>
-
         
-          <img src = "gear-logo-icon-92970.png" width="80px" height = "80px" alt="Gear Logo" className = "App-logo"/>
-        
-
       </div>  
     );
   }
