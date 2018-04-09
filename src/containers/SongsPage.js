@@ -4,7 +4,7 @@ import Songnav from '../components/Songnav';
 import {getSongs} from '../actions/songs';
 import '../stylesheets/App.css';
 
-class Songs extends React.Component { 
+class SongsPage extends React.Component { 
   
   componentDidMount(){
     this.props.getSongs()
@@ -27,5 +27,5 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps,{getSongs})(Songs);
+export default connect(mapStateToProps,{getSongs})(SongsPage);
 
