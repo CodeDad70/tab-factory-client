@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Songnav from '../components/Songnav';
 import {getSongs} from '../actions/songs';
-import './App.css';
+import '../stylesheets/App.css';
 
 class Songs extends React.Component { 
   

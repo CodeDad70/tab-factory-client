@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Songs from './Songs'
-import Songform from './Songform';
-import './App.css';
+import Songs from '../containers/Songs'
+import Songform from '../containers/Songform';
+import '../stylesheets/App.css';
 
 class App extends Component {
  
