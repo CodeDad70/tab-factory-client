@@ -1,31 +1,41 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import Songnav from '../components/Songnav';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import {getSongs} from '../actions/songs';
-import '../stylesheets/App.css';
+import SongsShow from './SongsShow';
+import Songnav from '../components/Songnav';
 
-class SongsPage extends React.Component { 
-  
-  componentDidMount(){
-    this.props.getSongs()
+class SongsPage extends Component {
+  componentDidMount() {
+    this.props.getSongs();
   }
 
   render() {
+    const {match, songs} = this.props;
+    
     return (
-      <div>
-        {this.props.songs.map (song => 
-          <Songnav key={song.id} song={song}/>  
-        )}
-      </div>
-    );
-  }
-}
+      <div >
+        <div className= "Sidebar">
+          <h3> Select a song: </h3>
+          <Songnav songs={songs} />
+        </div>
 
-const mapStateToProps = (state) => {
-  return ({
+        <Switch>
+          <div className="songtab">
+            <Route path={`${match.url}/:songId`} className="songtab" component= {SongsShow}/>
+          </div> 
+        </Switch>
+
+      </div>    
+    );   
+  };
+};
+  
+
+const mapStateToProps = state => {
+  return {
     songs: state.songs
-  })
+  };
 }
 
-export default connect(mapStateToProps,{getSongs})(SongsPage);
-
+export default connect(mapStateToProps, { getSongs })(SongsPage);
