@@ -50,7 +50,7 @@
   width:70%;
   height:100%;
   background-color: #052266;
-  float: left;
+  float: right;
   color: rgb(255, 255, 255);
   padding: 15px;
 }
@@ -62,5 +62,16 @@
   padding-left: 15px;
   background-color: #87b5ff;
   width: 25%;
-  
+}
+
+.New-song {
+  background-color: #87b5ff;
+  color: rgb(0, 0, 0);
+  float: left;
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  clear:left;
+  line-height: 8px;
 }
