@@ -11,9 +11,6 @@ class SongsPage extends Component {
     this.props.getSongs();
     
   }
- 
-  
-
   render() {
     const {match, songs} = this.props;
    

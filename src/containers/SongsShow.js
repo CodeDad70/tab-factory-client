@@ -2,11 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 class SongsShow extends React.Component { 
+  
   render() {
-  return ( 
-
+    
+    const renderLyrics = this.props.song.lyrics.map(song =><h4>{song.words}</h4>);
+    return ( 
+      
+ 
   <div className = "songtab">
     <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
+    {renderLyrics}
   </div>
   )
   }
