@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SongsShow = ({ song }) => 
+class SongsShow extends React.Component { 
+  render() {
+  return ( 
 
   <div className = "songtab">
-    <h2>{song.name} by {song.artist}</h2>
-  </div>;
+    <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
+  </div>
+  )
+  }
+}
 
 const mapStateToProps = (state, ownProps) => {
   const song = state.songs.find(song => song.id == ownProps.match.params.songId)
