@@ -6,24 +6,29 @@ import SongsShow from './SongsShow';
 import Songnav from '../components/Songnav';
 
 class SongsPage extends Component {
+  
   componentDidMount() {
     this.props.getSongs();
+    
   }
+ 
+  
 
   render() {
     const {match, songs} = this.props;
+   
     
     return (
-      <div >
+      <div>
         <div className= "Sidebar">
           <h3> Select a song: </h3>
-          <Songnav songs={songs} />
+          <Songnav songs={songs}  />
         </div>
 
         <Switch>
-          <div className="songtab">
-            <Route path={`${match.url}/:songId`} className="songtab" component= {SongsShow}/>
-          </div> 
+          
+            <Route path={`${match.url}/:songId`} component= {SongsShow}/>
+           
         </Switch>
 
       </div>    

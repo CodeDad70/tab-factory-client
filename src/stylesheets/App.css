@@ -38,11 +38,10 @@
 
 .songtab {
   width:70%;
-  height:100%;
-  background-color: #515050;
-  float: right;
   color: rgb(255, 255, 255);
-  padding: 15px;
+  
+  
+  float:right;
 }
 
 

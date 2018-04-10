@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const SongsShow = ({ song }) => 
-  <div >
-    <h2>{song.name}</h2>
-    <p>{song.artist}</p>
+
+  <div className = "songtab">
+    <h2>{song.name} by {song.artist}</h2>
   </div>;
 
 const mapStateToProps = (state, ownProps) => {

@@ -21,7 +21,10 @@ export const getSongs = () => {
     return fetch('http://localhost:3001/api/songs')
       .then(response => response.json())
       .then(songs => dispatch(setSongs(songs)))
-      .catch(error => console.log(error))
+      .catch(error => {
+        console.log(error)
+        debugger
+      })
   }
 }
 
