@@ -23,10 +23,7 @@ const App = (props) =>
       <Route path="/songs" component={NavBar} />
       <Route path="/song/new" component={SongsNew} />
     
-      <div className = "New-song">
-        <h3> Create a new tab: </h3>
-        <Songform/>
-      </div>
+      
 
     </div>
   
