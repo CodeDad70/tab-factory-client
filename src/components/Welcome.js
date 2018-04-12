@@ -24,9 +24,11 @@ class Welcome extends Component {
           <img src={`/${logo}`} width="30px" height = "30px" alt="Gear Logo" className = "App-logo"/>
           </h1>
           
-        
+          <button> Create a new tab</button>
 
-          <h3> Select a song to see it's tab: </h3>
+          <h3> or </h3>
+
+          <h3> Select a song to see it's tab or  </h3>
           <SongList songs={songs} />
         </div>
 
