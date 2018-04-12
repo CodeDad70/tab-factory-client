@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
-import SongsPage from '../containers/SongsPage';
 import Songform from '../containers/Songform'
 import SongsNew from '../containers/SongsNew';
-import Navbar from './Navbar';
+import NavBar from '../containers/NavBar';
 import Welcome from './Welcome';
 import '../stylesheets/App.css';
 
@@ -21,8 +20,8 @@ const App = (props) =>
       </div>
       <Route exact path="/" component={Welcome}/>
       
-      <Route path="/songs" component={SongsPage} />
-      <Route path="/new" component={SongsNew} />
+      <Route path="/songs" component={NavBar} />
+      <Route path="/song/new" component={SongsNew} />
     
       <div className = "New-song">
         <h3> Create a new tab: </h3>

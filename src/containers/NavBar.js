@@ -5,7 +5,7 @@ import {getSongs} from '../actions/songs';
 import SongsShow from './SongsShow';
 import SongList from '../components/SongList';
 
-class SongsPage extends Component {
+class NavBar extends Component {
   
   componentDidMount() {
     console.log("a")
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { getSongs })(SongsPage);
+export default connect(mapStateToProps, { getSongs })(NavBar);
