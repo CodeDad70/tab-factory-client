@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {updateSongFormData} from '../actions/songForm'
 import {createSong} from '../actions/songs'
+import SongsNew from './SongsNew';
 import '../stylesheets/App.css';
 
 class Songform extends React.Component {
@@ -15,9 +17,12 @@ class Songform extends React.Component {
   }
 
   handleOnSubmit = event => {
-    event.preventDefault()
-    this.props.createSong(this.props.songFormData)
-  }
+    event.preventDefault();
+    
+    this.props.createSong(this.props.songFormData);
+    return ({SongsNew})
+    }
+
 
   render() {
     const {name, artist} = this.props.songFormData;

@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import {getSongs} from '../actions/songs';
 import SongsShow from './SongsShow';
-import Songnav from '../components/Songnav';
+import SongList from '../components/SongList';
 
 class SongsPage extends Component {
   
   componentDidMount() {
+    console.log("a")
     this.props.getSongs();
-    
+    console.log("b")    
   }
   render() {
     const {match, songs} = this.props;
@@ -19,7 +20,7 @@ class SongsPage extends Component {
       <div>
         <div className= "Sidebar">
           <h3> Select a song: </h3>
-          <Songnav songs={songs}  />
+          <SongList songs={songs}  />
         </div>
 
         <Switch>

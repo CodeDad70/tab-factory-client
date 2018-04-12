@@ -2,6 +2,7 @@ import {resetSongForm} from './songForm';
 
 // **Action Creators
 const setSongs = songs => {
+  console.log("d")
   return {
     type: 'GET_SONGS',
     songs
@@ -20,10 +21,10 @@ export const getSongs = () => {
   return dispatch => {
     return fetch('http://localhost:3001/api/songs')
       .then(response => response.json())
+      
       .then(songs => dispatch(setSongs(songs)))
+      .then(console.log("c"))
       .catch(error => {
-        console.log(error)
-        debugger
       })
   }
 }

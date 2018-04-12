@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Songnav = ({ songs }) => {
+const SongList = ({ songs }) => {
   const renderSongs = songs.map(song => 
     <Link  className="link-style" key={song.id} to={`/songs/${song.id}`}><h4>{song.name}</h4></Link>
   );
@@ -13,4 +13,4 @@ const Songnav = ({ songs }) => {
    );
 };
 
-export default Songnav;
+export default SongList;

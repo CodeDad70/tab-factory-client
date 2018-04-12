@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getSongs} from '../actions/songs';
-import Songnav from '../components/Songnav';
+import SongList from '../components/SongList';
 
 class Welcome extends Component {
   
@@ -19,7 +19,7 @@ class Welcome extends Component {
         <h1> Welcome to the Tab Factory</h1>
 
           <h3> Select a song to see it's tab: </h3>
-          <Songnav songs={songs} />
+          <SongList songs={songs} />
         </div>
 
         
