@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {getSongs} from '../actions/songs';
 import SongList from '../components/SongList';
 
@@ -24,11 +25,11 @@ class Welcome extends Component {
           <img src={`/${logo}`} width="30px" height = "30px" alt="Gear Logo" className = "App-logo"/>
           </h1>
           
-          <button> Create a new tab</button>
+          <Link  className="link-style" to={`/new`}><h4>Create a new Tab</h4></Link>
 
           <h3> or </h3>
 
-          <h3> Select a song to see it's tab or  </h3>
+          <h3> Select a song</h3>
           <SongList songs={songs} />
         </div>
 

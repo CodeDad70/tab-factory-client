@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import {getSongs} from '../actions/songs';
 import SongsShow from './SongsShow';
 import SongList from '../components/SongList';
+import SongsNew from './SongsNew'
 
 class NavBar extends Component {
   
@@ -17,7 +18,8 @@ class NavBar extends Component {
   render() {
     const {match, songs} = this.props;
     const logo = "gear-logo-icon-92970.png"
-   
+    
+    const checkURL = this.props.songId !== "new" 
     
     return (
       <div>
@@ -28,13 +30,21 @@ class NavBar extends Component {
         </div>
 
         <div className= "Sidebar">
+        <Link  className="link-style" to={`/new`}><h4>Create a new Tab</h4></Link>
+        <h3> or </h3>
           <h3> Select a song: </h3>
           <SongList songs={songs}  />
         </div>
+        <Switch>  
+        {checkURL? 
+        
+         ( <Route exact path={`${match.url}/:songId`} component= {SongsShow}/>): 
+          ( <Route path="/new" component={SongsNew} />
 
-        <Switch> 
-          <Route path={`${match.url}/:songId`} component= {SongsShow}/>
+        )}
         </Switch>
+
+       
 
       </div>    
     );   

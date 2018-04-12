@@ -20,7 +20,7 @@ class Songform extends React.Component {
     event.preventDefault();
     
     this.props.createSong(this.props.songFormData);
-    return ({SongsNew})
+    
     }
 
 
