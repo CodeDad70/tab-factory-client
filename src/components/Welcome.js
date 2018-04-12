@@ -15,15 +15,16 @@ class Welcome extends Component {
     
     return (
       <div>
-        <div className= "songtab">
+        <div className= "welcome">
 
-        <h1> Welcome to </h1>
+        <h3> Welcome to </h3>
         
-        <div >
-         <h1 >The Tab Factory
+        
+         <h1 className="welcome-logo">The Tab Factory
           <img src={`/${logo}`} width="30px" height = "30px" alt="Gear Logo" className = "App-logo"/>
           </h1>
-        </div>
+          
+        
 
           <h3> Select a song to see it's tab: </h3>
           <SongList songs={songs} />

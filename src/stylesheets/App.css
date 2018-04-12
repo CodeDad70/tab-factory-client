@@ -42,6 +42,12 @@
   float:right;
 }
 
+.welcome {
+  text-align: center;
+  width:100%;
+  background-color: #d6002e;
+  padding: 40px
+}
 
 .Sidebar {
   background-color: #d6002e;
@@ -62,6 +68,18 @@
   padding-left: 15px;
   background-color: #d6d6d6;
   width: 25%;
+}
+
+.welcome-logo {
+  
+  display: block;
+  background-color: #eee;
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 300px;
+  padding: 15px;
+  background-color: #d6d6d6;
 }
 
 .New-song {
