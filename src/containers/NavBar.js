@@ -8,10 +8,10 @@ class NavBar extends Component {
   
   componentDidMount() {
     this.props.getSongs();
-    
   }
+  
   render() {
-    const {match, songs} = this.props;
+    const songs = this.props.songs;
     const logo = "gear-logo-icon-92970.png"
     
     return (

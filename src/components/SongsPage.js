@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, Link } from 'react-router-dom';
-import {getSongs} from '../actions/songs';
-import SongsShow from './SongsShow';
-import SongList from '../components/SongList';
-import SongsNew from './SongsNew'
+import SongsShow from '../containers/SongsShow';
+import SongsNew from '../containers/SongsNew'
 
 class SongsPage extends Component {
   
-  componentDidMount() {
-    console.log("a")
-    this.props.getSongs();
-    console.log("b")    
-  }
 
-  
   render() {
     const {match, songs} = this.props;
-    const logo = "gear-logo-icon-92970.png"
-
-    
     return (
       <div>
        
@@ -27,8 +16,6 @@ class SongsPage extends Component {
           <Route exact path={`${match.url}/:songId`} component= {SongsShow}/> 
           <Route exact path="/songs/new" component={SongsNew} />  
         </Switch>
-
-       
 
       </div>    
     );   
@@ -42,4 +29,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { getSongs })(SongsPage);
+export default connect(mapStateToProps)(SongsPage);

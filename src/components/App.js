@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 import Songform from '../containers/Songform'
 import SongsNew from '../containers/SongsNew';
-import SongsPage from '../containers/SongsPage';
+import SongsPage from './SongsPage';
 import SongsShow from '../containers/SongsShow';
-import NavBar from './NavBar';
+import NavBar from '../containers/NavBar';
 import '../stylesheets/App.css';
 
 
