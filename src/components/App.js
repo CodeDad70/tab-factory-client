@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 import Songform from '../containers/Songform'
 import SongsNew from '../containers/SongsNew';
-import NavBar from '../containers/NavBar';
-import Welcome from './Welcome';
+import SongsPage from '../containers/SongsPage';
+import SongsShow from '../containers/SongsShow';
+import NavBar from './NavBar';
 import '../stylesheets/App.css';
 
 
@@ -14,10 +15,10 @@ const App = (props) =>
     <div>
 
       
-      <Route exact path="/" component={Welcome}/>
-      
-      <Route path="/songs" component={NavBar} />
-      <Route path="/new" component={SongsNew} />
+      <Route  path="/" component={NavBar}/>
+      <Route exact path="/songs/show"  component={SongsShow}/>
+      <Route path="/songs" component={SongsPage} />
+      <Route exact path="/new" component={SongsNew} />
     
       
 
