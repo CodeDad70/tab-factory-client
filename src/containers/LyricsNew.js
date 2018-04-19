@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
 class LyricsNew extends React.Component { 
   
   render() {
     
-    
+    console.log(this.props)
+
     return ( 
       
  
   <div className = "songtab">
     <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
-    
+   
   </div>
   )
   }

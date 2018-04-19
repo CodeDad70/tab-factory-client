@@ -11,6 +11,7 @@ const setSongs = songs => {
 }
 
 const addSong = song => {
+  console.log(song)
   return {
     type: 'CREATE_SONG_SUCCESS',
     song
