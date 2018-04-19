@@ -1,4 +1,4 @@
-const initialState = {name:'', artist: ''}
+const initialState = {name:'', artist: '', lyrics:''}
 
 export default (state=initialState, action ) => {
    switch(action.type) {

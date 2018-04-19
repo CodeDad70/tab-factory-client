@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Songform from './Songform';
@@ -21,12 +21,11 @@ class SongsNew extends React.Component {
       <div>
        
       <div className="songtab">
-        <h1> Worked ! </h1>
-        <div>
+       
         <h3> Create a new tab: </h3>
         <Songform/>
       </div>
-      </div> 
+     
       </div>
     
     )

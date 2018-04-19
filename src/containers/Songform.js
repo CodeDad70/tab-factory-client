@@ -1,12 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
+import { Redirect } from 'react-router'
 import {connect} from 'react-redux';
-import {updateSongFormData} from '../actions/songForm'
-import {createSong} from '../actions/songs'
-import SongsNew from './SongsNew';
+import {updateSongFormData} from '../actions/songForm';
+import {createSong} from '../actions/songs';
+import LyricsNew from './LyricsNew';
+
+
 import '../stylesheets/App.css';
 
 class Songform extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      fireRedirect: false
+    }
+  }
 
   handleOnChange = event => {
     const {name, value} = event.target
@@ -17,15 +25,18 @@ class Songform extends React.Component {
   }
 
   handleOnSubmit = event => {
-    event.preventDefault();
-    
+    event.preventDefault(); 
+    this.setState({ fireRedirect: true })
     this.props.createSong(this.props.songFormData);
     
     }
 
+ 
 
   render() {
+    const { fireRedirect } = this.state
     const {name, artist} = this.props.songFormData;
+    
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
@@ -40,9 +51,11 @@ class Songform extends React.Component {
                 value={name}
               />
           </div>
+          
           <br/>
+
           <div>
-            <label htmlFor="name">Artist: </label>
+            <label htmlFor="artist">Artist: </label>
               <input 
                 type ="text" 
                 className = "songform" 
@@ -51,9 +64,17 @@ class Songform extends React.Component {
                 value={artist}
               />
           </div> 
-          <br/>   
+
+          <br/>  
+          
+        
+
+
           <button type="submit"> Create Song </button> 
         </form>
+        {fireRedirect && (
+          <Redirect to={'/lyrics'}/>
+        )}
       </div>  
     )
   }

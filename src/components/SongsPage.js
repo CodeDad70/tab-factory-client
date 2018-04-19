@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import SongsShow from '../containers/SongsShow';
 import SongsNew from '../containers/SongsNew'
 
@@ -8,7 +8,7 @@ class SongsPage extends Component {
   
 
   render() {
-    const {match, songs} = this.props;
+    const match = this.props.match;
     return (
       <div>
        
