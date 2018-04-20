@@ -1,13 +1,11 @@
-const initialState = {name:'', artist:'', id:'', lyrics:[]}
+
  
-export default (state=initialState, action ) => {
+export default (state=[], action ) => {
+  console.log(action)
   switch(action.type) {
+   
    case 'CURRENT_SONG':
-   return Object.assign({}, state, {
-    song: [
-      ...state.song, action.song
-    ]
-  });
+   return state.concat(action.song);
 
 
    default: 
