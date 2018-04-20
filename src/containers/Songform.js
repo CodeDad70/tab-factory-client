@@ -7,7 +7,6 @@ import {currentSong} from '../actions/song';
 import LyricsNew from './LyricsNew';
 
 
-import '../stylesheets/App.css';
 
 class Songform extends React.Component {
   constructor () {

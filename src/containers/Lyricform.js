@@ -19,7 +19,7 @@ class Lyricform extends React.Component {
   handleOnChange = event => {
     const {name, value} = event.target
     const currentLyricFormData = Object.assign({}, this.props.lyricFormData,{
-      [name]:value
+      [name]:value, song_id: this.props.song.id
     })
     this.props.updateLyricFormData(currentLyricFormData)
   }
@@ -35,7 +35,7 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const {words, chords, song_id} = this.props.lyricFormData;
+    const {words, song_id} = this.props.lyricFormData;
     
     return (
       <div>
@@ -60,7 +60,7 @@ class Lyricform extends React.Component {
           <button type="submit"> Create Lyric </button> 
         </form>
         {fireRedirect && (
-          <Redirect to={'/lyrics'}/>
+          <Redirect to={'/songs'}/>
         )}
       </div>  
     )
@@ -70,7 +70,7 @@ class Lyricform extends React.Component {
 const mapStateToProps = state => {
   return {
     lyricFormData: state.lyricFormData,
-    currentSong: state.currentSong
+    song: state.song,
   }
 }
 

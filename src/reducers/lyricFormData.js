@@ -1,4 +1,4 @@
-const initialState = {words:'', chords: '', song_id:''}
+const initialState = {words:'', song_id:''}
 
 export default (state=initialState, action ) => {
   console.log(state)
