@@ -5,7 +5,7 @@ export default (state=[], action ) => {
   switch(action.type) {
    
    case 'CURRENT_SONG':
-   return state.concat(action.song);
+    return action.song;
 
 
    default: 
