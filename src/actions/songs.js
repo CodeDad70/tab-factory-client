@@ -1,4 +1,5 @@
 import {resetSongForm} from './songForm';
+import {currentSong} from './song';
 
 
 // **Action Creators
@@ -12,6 +13,7 @@ const setSongs = songs => {
 
 const addSong = song => {
   console.log(song)
+  currentSong(song)
   return {
     type: 'CREATE_SONG_SUCCESS',
     song

@@ -6,12 +6,14 @@ import {
 
 import thunk from 'redux-thunk';
 import songs from './reducers/songs';
+import song from './reducers/song';
 import songFormData from './reducers/songFormData';
 
 
 const reducers = combineReducers({
   songs,
-  songFormData
+  songFormData,
+  song
 });
 
 const middleware = [thunk];

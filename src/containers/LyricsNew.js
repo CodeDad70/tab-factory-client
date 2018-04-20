@@ -11,21 +11,15 @@ class LyricsNew extends React.Component {
       
  
   <div className = "songtab">
-    <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
+    {/* <h2>{this.props.song.song.name} by {this.props.song.song.artist}</h2>  */}
    
   </div>
   )
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const song = state.songs.find(song => song.id == ownProps.match.params.songId)
-
-  if (song){
-    return {song}
-  } else {
-    return {song: {} }
-  }
+const mapStateToProps = (state) => {
+  song: state.current_song 
 }
 
 export default connect(mapStateToProps)(LyricsNew);
