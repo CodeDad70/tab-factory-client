@@ -4,6 +4,7 @@ import { Route, Switch} from 'react-router-dom';
 import SongsShow from '../containers/SongsShow';
 import SongsNew from '../containers/SongsNew'
 
+
 class SongsPage extends Component {
   
 
@@ -14,7 +15,7 @@ class SongsPage extends Component {
        
         <Switch>  
           <Route exact path={`${match.url}/:songId`} component= {SongsShow}/> 
-          <Route exact path="/songs/new" component={SongsNew} />  
+          <Route exact path="/songs/new" component={SongsNew} /> 
         </Switch>
 
       </div>    
