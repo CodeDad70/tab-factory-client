@@ -5,9 +5,9 @@ class SongsShow extends React.Component {
   
   render() {
     
-    const renderLyrics = this.props.song.lyrics.map(song =><h4 key={song.id}>{song.words}</h4>);
+  const renderLyrics = this.props.song.lyrics.map(song =><h4 key={song.id}>{song.words}</h4>);
     
-    return ( 
+  return ( 
       
  
   <div className = "songtab">

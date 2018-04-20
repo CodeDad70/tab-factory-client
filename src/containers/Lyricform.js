@@ -39,6 +39,9 @@ class Lyricform extends React.Component {
     
     return (
       <div>
+        <div>
+          <h2>{words}</h2>
+          </div>
         <form onSubmit={this.handleOnSubmit}>
 
           <div>
@@ -60,8 +63,11 @@ class Lyricform extends React.Component {
           <button type="submit"> Create Lyric </button> 
         </form>
         {fireRedirect && (
-          <Redirect to={'/songs'}/>
+          <Redirect to={'/lyrics'}/>
         )}
+
+        
+
       </div>  
     )
   }
