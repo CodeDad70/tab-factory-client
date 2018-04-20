@@ -3,23 +3,26 @@ import { connect } from 'react-redux';
 
 class LyricsNew extends React.Component { 
   
-  render() {
+  render(){
     
-    console.log(this.props)
+    const currentSong = this.props.song.map(song =><h4 key={song.id}>{song.name} by {song.artist} </h4>);
 
     return ( 
       
  
   <div className = "songtab">
-    {/* <h2>{this.props.song.song.name} by {this.props.song.song.artist}</h2>  */}
-   
+    "Here "
+    {currentSong}
+    {currentSong.key}
   </div>
   )
   }
 }
 
-const mapStateToProps = (state) => {
-  song: state.current_song 
+const mapStateToProps = state => {
+  return {
+    song: state.song
+  };
 }
 
 export default connect(mapStateToProps)(LyricsNew);
