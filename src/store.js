@@ -8,9 +8,13 @@ import thunk from 'redux-thunk';
 import songs from './reducers/songs';
 import song from './reducers/song';
 import songFormData from './reducers/songFormData';
+import lyrics from './reducers/lyrics';
+import lyricFormData from './reducers/lyricFormData';
 
 
 const reducers = combineReducers({
+  lyrics,
+  lyricFormData,
   songs,
   songFormData,
   song
