@@ -11,10 +11,10 @@ const setLyrics = lyrics => {
   }
 }
 
-const addLyric = (Lyric) => {
+const addLyric = (lyric) => {
   return {
     type: 'CREATE_LYRIC_SUCCESS',
-    song
+    lyric
   }
 }
 
@@ -42,7 +42,7 @@ export const createLyric = lyric => {
     })
     .then(response => response.json())
     .then(lyric => {
-      dispatch(addSong(lyric))
+      dispatch(addLyric(lyric))
       dispatch(resetLyricForm())
     })
     .catch(error => console.log(error))

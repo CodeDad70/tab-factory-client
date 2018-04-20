@@ -1,23 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import NavBar from './NavBar'
+import Lyricform from './Lyricform';
 
 
-class LyricsNew extends React.Component { 
+import {getSongs} from '../actions/songs';
 
-  render(){
+import '../stylesheets/App.css';
+
+class LyricsNew extends React.Component {
+  
+  componentDidMount() {
+    this.props.getSongs();
     
+  }
 
-    return ( 
-    <div>
+  
+  
+  render() {
+    
+    return (
+      <div>
+
+      <div className = "songtab">
+         <h1>{this.props.song.name} by {this.props.song.artist}</h1>
+    
+      </div>
+       
+      <div className="songtab">
+       
+        <h3> Create a Lyrics: </h3>
+        <Lyricform/>
+      </div>
      
- 
-  <div className = "songtab">
-    <h1>{this.props.song.name} by {this.props.song.artist}</h1>
+      </div>
     
-  </div>
-      
-  </div>
-  )
+    )
   }
 }
 
@@ -28,4 +46,5 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps)(LyricsNew);
+export default connect(mapStateToProps, { getSongs })(LyricsNew);
+;
