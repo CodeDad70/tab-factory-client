@@ -1,7 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {getSongs} from '../actions/songs';
+import SongList from '../components/SongList';
 
 class LyricsNew extends React.Component { 
+
+  componentDidMount() {
+   <SongList/>
+  }
   
   render(){
     
@@ -21,7 +27,8 @@ class LyricsNew extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    song: state.song
+    song: state.song,
+    songs: state.songs
   };
 }
 
