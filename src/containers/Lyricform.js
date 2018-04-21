@@ -46,7 +46,7 @@ class Lyricform extends React.Component {
         <form onSubmit={this.handleOnSubmit}>
 
           <div>
-            <label htmlFor="name">Name: </label>
+            
               <input 
                 type ="text" 
                 className = "lyricform" 

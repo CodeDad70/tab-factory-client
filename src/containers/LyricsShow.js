@@ -17,22 +17,22 @@ class LyricsShow extends React.Component {
 
     
     return (
-      <div>
+    
       <div className = "songtab">
          <h1>{this.props.song.name} by {this.props.song.artist}</h1>
     
-      </div>
+     
 
      
-        <div className = 'songtab'> {this.props.lyric.words} </div>
+         {this.props.lyric.words} 
 
-        <div>
+       
         <h3> Create Lyrics: </h3>
         <Lyricform/>
       </div>
 
 
-        </div>
+       
     
     )
   }
