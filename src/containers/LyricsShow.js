@@ -13,19 +13,12 @@ class LyricsShow extends React.Component {
   }
 
   render() {
-    console.log(this.props.song)
-    
+    console.log(this.props.lyric)
 
-    
     
     return (
       <div>
-
-      <div className = 'songtab'> "Test" </div>
-      {this.props.song.lyrics}
-
-              
-   
+        <div className = 'songtab'> "Test" </div>
       </div>
     
     )
@@ -36,7 +29,8 @@ const mapStateToProps = state => {
   return {
     song: state.song,
     songs: state.songs,
-    lyrics: state.lyrics
+    lyrics: state.lyrics,
+    lyric: state.lyric 
   };
 }
 

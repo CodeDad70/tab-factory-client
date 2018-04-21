@@ -2,8 +2,8 @@ export default (state=[], action ) => {
   console.log(action)
   switch(action.type) {
    
-   case 'CURRENT_SONG':
-    return action.song;
+   case 'CURRENT_LYRIC':
+    return action.lyric;
 
 
    default: 

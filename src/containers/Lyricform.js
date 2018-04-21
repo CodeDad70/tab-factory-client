@@ -79,7 +79,7 @@ const mapStateToProps = state => {
     lyricFormData: state.lyricFormData,
     song: state.song,
     songs: state.songs,
-    lyrics: state.lyrics
+    lyrics: state.lyrics, 
   }
 }
 

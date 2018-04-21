@@ -1,4 +1,5 @@
 import {resetLyricForm} from './lyricForm';
+import {currentSong} from './song';
 
 
 
@@ -14,6 +15,7 @@ const setLyrics = lyrics => {
 const addLyric = (lyric) => {
   return {
     type: 'CREATE_LYRIC_SUCCESS',
+    type: 'CURRENT_LYRIC',
     lyric
   }
 }
