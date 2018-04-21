@@ -32,11 +32,10 @@ class LyricsNew extends React.Component {
        
 
       
-      <div className="songtab">
-       
+      
         <h3> Create Lyrics: </h3>
         <Lyricform/>
-      </div>
+      
      
       </div>
     
