@@ -2,11 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar'
 
-
-
-
 import {getSongs} from '../actions/songs';
 import Lyricform from './Lyricform'
+import LyricsShow from './LyricsShow';
 import '../stylesheets/App.css';
 
 class LyricsNew extends React.Component {
@@ -22,13 +20,6 @@ class LyricsNew extends React.Component {
   
   
   render() {
-    let renderLyrics
-
-    if(this.props.song.lyrics){    
-      const renderLyrics = this.props.song.lyrics.map(lyric => 
-        <h4 key={this.props.song.id} >{lyric.words}</h4>)
-    } 
-    
     
     return (
       <div>
@@ -38,9 +29,7 @@ class LyricsNew extends React.Component {
     
       </div>
 
-        <div >
-        {renderLyrics}
-      </div>
+       
 
       
       <div className="songtab">

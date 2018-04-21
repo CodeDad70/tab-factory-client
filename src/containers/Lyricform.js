@@ -3,8 +3,9 @@ import { Redirect } from 'react-router'
 import {connect} from 'react-redux';
 import {updateLyricFormData} from '../actions/lyricForm';
 import {createLyric} from '../actions/lyrics';
-import {currentSong} from '../actions/song';
 import LyricsNew from './LyricsNew';
+import LyricsShow from './LyricsShow';
+import Navbar from './NavBar'
 
 
 
@@ -63,7 +64,7 @@ class Lyricform extends React.Component {
           <button type="submit"> Create Lyric </button> 
         </form>
         {fireRedirect && (
-          <Redirect to={'/lyrics'}/>
+          <Redirect to={'/lyrics/show'}/>
         )}
 
         
@@ -77,11 +78,12 @@ const mapStateToProps = state => {
   return {
     lyricFormData: state.lyricFormData,
     song: state.song,
+    songs: state.songs,
+    lyrics: state.lyrics
   }
 }
 
 export default connect (mapStateToProps, {
   updateLyricFormData,
-  createLyric,
-  currentSong 
+  createLyric
 })(Lyricform);

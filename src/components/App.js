@@ -5,6 +5,7 @@ import SongsPage from './SongsPage';
 import SongsShow from '../containers/SongsShow';
 import NavBar from '../containers/NavBar';
 import LyricsNew from '../containers/LyricsNew'
+import LyricsShow from '../containers/LyricsShow'
 import '../stylesheets/App.css';
 
 
@@ -19,6 +20,7 @@ const App = (props) =>
       <Route path="/songs" component={SongsPage} />
       <Route exact path="/new" component={SongsNew} />
       <Route exact path="/lyrics" component={LyricsNew}/>
+      <Route exact path="/lyrics/show" component={LyricsShow}/>
 
     </div>
   
