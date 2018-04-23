@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import {connect} from 'react-redux';
 import {updateSongFormData} from '../actions/songForm';
 import {createSong} from '../actions/songs';
+import {emptyLyric} from '../actions/lyrics';
 
 
 import LyricsNew from './LyricsNew';
@@ -10,10 +11,16 @@ import LyricsNew from './LyricsNew';
 
 
 class Songform extends React.Component {
+
+  componentDidMount() {
+    this.props.emptyLyric();
+  }  
+
   constructor () {
     super();
     this.state = {
-      fireRedirect: false
+      fireRedirect: false,
+   
     }
   }
 
@@ -85,6 +92,7 @@ class Songform extends React.Component {
 const mapStateToProps = state => {
   return {
     songFormData: state.songFormData,
+    lyric: state.lyric
 
   }
 }
@@ -92,4 +100,5 @@ const mapStateToProps = state => {
 export default connect (mapStateToProps, {
   updateSongFormData,
   createSong,
+  emptyLyric,
 })(Songform);

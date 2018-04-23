@@ -1,8 +1,17 @@
 import {resetLyricForm} from './lyricForm';
+import {currentSong} from './song';
 
 
 
 // **Action Creators
+
+export const emptyLyric = (lyric) => {
+  return {
+    type: 'EMPTY_LYRIC',
+    lyric
+  }
+}
+
 const setLyrics = lyrics => {
   console.log("d")
   return {
@@ -18,6 +27,7 @@ const addLyric = (lyric) => {
     lyric
   }
 }
+
 
 //**Async Actions
 export const getLyrics = () => {
