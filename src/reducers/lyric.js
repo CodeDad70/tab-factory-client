@@ -3,7 +3,7 @@ export default (state=[], action ) => {
   switch(action.type) {
    
    case 'CURRENT_LYRIC':
-    return action.lyric;
+    return [...state, action.lyric]
 
 
    default: 

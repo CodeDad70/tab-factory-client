@@ -4,8 +4,9 @@ import SongsNew from '../containers/SongsNew';
 import SongsPage from './SongsPage';
 import SongsShow from '../containers/SongsShow';
 import NavBar from '../containers/NavBar';
-import LyricsNew from '../containers/LyricsNew'
-import LyricsShow from '../containers/LyricsShow'
+import LyricsNew from '../containers/LyricsNew';
+import LyricsShow from '../containers/LyricsShow';
+
 import '../stylesheets/App.css';
 
 

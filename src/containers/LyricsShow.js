@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import {getSongs} from '../actions/songs';
-import Lyricform from './Lyricform'
+import Lyricform from './Lyricform';
+import RenderLyrics from '../components/RenderLyrics';
 import '../stylesheets/App.css';
+
 
 class LyricsShow extends React.Component {
   
@@ -16,6 +18,7 @@ class LyricsShow extends React.Component {
     console.log(this.props.lyric)
 
     
+    
     return (
     
       <div className = "songtab">
@@ -24,7 +27,7 @@ class LyricsShow extends React.Component {
      
 
      
-         {this.props.lyric.words} 
+         <RenderLyrics/>
 
        
         <h3> Create Lyrics: </h3>

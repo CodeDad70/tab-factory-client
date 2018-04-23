@@ -13,7 +13,7 @@ class Lyricform extends React.Component {
   constructor () {
     super();
     this.state = {
-      fireRedirect: false
+      fireRedirect: false,
     }
   }
 
@@ -27,10 +27,10 @@ class Lyricform extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault(); 
-    this.setState({ fireRedirect: true })
-    this.props.createLyric(this.props.lyricFormData)
-    
-    }
+    this.setState({ fireRedirect: true });
+    this.props.createLyric(this.props.lyricFormData);
+    this.setState({ lyric: [...this.props.lyricFormData, this.state.lyric]});
+  }
 
  
 
