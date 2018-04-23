@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {updateSongFormData} from '../actions/songForm';
 import {createSong} from '../actions/songs';
 import {emptyLyric} from '../actions/lyrics';
-
+import {getSongs} from '../actions/songs';
 
 import LyricsNew from './LyricsNew';
 
@@ -35,6 +35,7 @@ class Songform extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault(); 
     this.setState({ fireRedirect: true })
+    this.props.getSongs();
     this.props.createSong(this.props.songFormData)
     
     
@@ -101,4 +102,5 @@ export default connect (mapStateToProps, {
   updateSongFormData,
   createSong,
   emptyLyric,
+  getSongs,
 })(Songform);

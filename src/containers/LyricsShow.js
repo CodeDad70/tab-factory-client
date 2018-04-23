@@ -27,7 +27,7 @@ class LyricsShow extends React.Component {
      
 
      
-         <RenderLyrics/>
+         <RenderLyrics/> 
 
        
         <h3> Create Lyrics: </h3>

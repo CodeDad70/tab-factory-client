@@ -10,10 +10,10 @@ class RenderLyrics extends React.Component {
  
   render() {
     
-    const showAll = this.props.lyric.map(song=><h4 key={song.id}>{song.words}</h4>)
+    const showAll = this.props.lyric.map(song=><h2 className = "songtab" key={song.id}>{song.words}</h2>)
     return (
     
-      <div className = "songtab">
+      <div>
         {showAll}
       </div>
     
