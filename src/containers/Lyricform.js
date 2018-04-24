@@ -41,35 +41,43 @@ class Lyricform extends React.Component {
     
     return (
       
-      <div className = "lyric-field">
-        <div>
-          <h3>{chords}</h3>
-          <h2>{words}</h2>
-          </div>
+      <div >
+        
         <form onSubmit={this.handleOnSubmit} >
 
            <div>
-            
+            <h4> Enter your chords here:</h4>
             <input 
-              type ="text" 
+              
+              type ="text-chords" 
               className = "lyricform" 
               onChange={this.handleOnChange}
               name="chords"
               value={chords}
               
-            /><br/><br/>
+            />
+            
            
         </div>
 
-          <div>
+        <div>
+         
+          <h2>{words}</h2>
+          </div><br/><br/><br/><br/><br/><br/><br/><br/>
+      
+      <div>
+      
+          
             
               <input 
                 type ="text" 
-                className = "lyricform" 
+                className="LyricForm" 
                 onChange={this.handleOnChange}
                 name="words"
                 value={words}
               />
+          
+         
           </div>
           
           <br/>

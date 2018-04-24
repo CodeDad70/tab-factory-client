@@ -32,7 +32,7 @@ class LyricsNew extends React.Component {
 
       
       
-        <h3> Create Lyrics: </h3>
+       
         <Lyricform/>
       
      

@@ -117,3 +117,18 @@ font-family: monospace !important;
   color:  #ffffff;
   
 }
+
+
+input[type="text-chords"]
+{
+    background:#333232;
+    border: 1px;
+    outline: .5px;
+    color:  #ffffff;
+    width: 500px
+}
+
+
+.LyricForm {
+  width: 500px;
+}

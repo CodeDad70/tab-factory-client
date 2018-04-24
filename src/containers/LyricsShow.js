@@ -32,7 +32,7 @@ class LyricsShow extends React.Component {
       </tr>
 
       <tr> 
-        <h3> Create Lyrics: </h3>
+        
         <Lyricform/>
       </tr>
 
