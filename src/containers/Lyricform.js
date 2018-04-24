@@ -6,7 +6,6 @@ import {createLyric} from '../actions/lyrics';
 import LyricsNew from './LyricsNew';
 import LyricsShow from './LyricsShow';
 import {getSongs} from '../actions/songs';
-import {setChords} from '../actions/chords';
 import Navbar from './NavBar'
 
 
@@ -30,7 +29,7 @@ class Lyricform extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault(); 
     this.props.getSongs();
-    this.props.setChords();
+  
     this.setState({ fireRedirect: true });
     this.props.createLyric(this.props.lyricFormData);
   }
@@ -81,7 +80,7 @@ const mapStateToProps = state => {
     lyricFormData: state.lyricFormData,
     song: state.song,
     songs: state.songs,
-    lyrics: state.lyrics, 
+    lyrics: state.lyrics 
   }
 }
 
@@ -89,4 +88,5 @@ export default connect (mapStateToProps, {
   updateLyricFormData,
   createLyric,
   getSongs,
+ 
 })(Lyricform);
