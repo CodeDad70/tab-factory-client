@@ -10,7 +10,8 @@ class SongsShow extends React.Component {
     <div>
     <td> 
      
-      <tr><h3>{lyric.chords}</h3> 
+      <tr>
+      <div className="chordfont">{lyric.chords}</div>
       <h2 key={lyric.id}>{lyric.words}</h2>
       </tr>
     

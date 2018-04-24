@@ -45,8 +45,9 @@ class Lyricform extends React.Component {
         
         <form onSubmit={this.handleOnSubmit} >
 
-           <div>
-            <h4> Enter your chords here:</h4>
+           
+             Enter your chords here: <br/><br/>
+             
             <input 
               
               type ="text-chords" 
@@ -56,9 +57,10 @@ class Lyricform extends React.Component {
               value={chords}
               
             />
-            
+     
+          
            
-        </div>
+      
 
         <div>
          

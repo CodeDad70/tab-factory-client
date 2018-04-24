@@ -125,7 +125,13 @@ input[type="text-chords"]
     border: 1px;
     outline: .5px;
     color:  #ffffff;
-    width: 500px
+    width: 500px;
+    font-size: 16px;
+}
+
+.chordfont {
+  font-size: 16px;
+  color:  #ffffff;
 }
 
 

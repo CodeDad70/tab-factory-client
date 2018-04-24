@@ -29,7 +29,7 @@ class LyricsShow extends React.Component {
       <tr>
          <RenderLyrics/> 
         
-      </tr>
+      </tr><br/><br/><br/><br/><br/><br/>
 
       <tr> 
         

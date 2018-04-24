@@ -13,7 +13,7 @@ class RenderLyrics extends React.Component {
 
     const showAll = this.props.lyric.map(lyric=>
       <div>     
-        <h3  key={lyric.id}>{lyric.chords}</h3> 
+        <div className="chordfont" key={lyric.id}>{lyric.chords}</div> 
         <h2 key={lyric.id}>{lyric.words}</h2>
       </div>
     )
