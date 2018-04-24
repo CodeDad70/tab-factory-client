@@ -37,14 +37,29 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const {words, song_id} = this.props.lyricFormData;
+    const {words, song_id, chords} = this.props.lyricFormData;
     
     return (
-      <div>
+      
+      <div className = "lyric-field">
         <div>
+          <h3>{chords}</h3>
           <h2>{words}</h2>
           </div>
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.handleOnSubmit} >
+
+           <div>
+            
+            <input 
+              type ="text" 
+              className = "lyricform" 
+              onChange={this.handleOnChange}
+              name="chords"
+              value={chords}
+              
+            /><br/><br/>
+           
+        </div>
 
           <div>
             

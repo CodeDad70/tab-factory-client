@@ -44,6 +44,15 @@ font-family: monospace !important;
   color: rgb(255, 255, 255);
   float:right;
   white-space: pre;
+  display:block;
+}
+
+.lyric-field {
+  width:70%;
+  color: rgb(255, 255, 255);
+  
+  white-space: pre;
+  
 }
 
 .welcome {

@@ -23,9 +23,9 @@ class NavBar extends Component {
         </div>
 
         <div className= "Sidebar">
-        <Link  className="link-style" to={`/new`}><h4>Create a new Tab</h4></Link>
+        <Link  className="link-style" to={`/new`}><h2>Create a new Tab</h2></Link>
         <h3> or </h3>
-          <h3> Select a song: </h3>
+          <h2> Select a song: </h2>
           <SongList songs={songs}  />
         </div>
         

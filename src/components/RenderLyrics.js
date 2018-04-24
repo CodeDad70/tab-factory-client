@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ChordsForm from '../containers/ChordsForm';
 
 
 import Lyricform from '../containers/Lyricform'
@@ -13,8 +14,8 @@ class RenderLyrics extends React.Component {
 
     const showAll = this.props.lyric.map(lyric=>
       <div>     
-        <h3 classname="songtab" key={lyric.id}>{lyric.chords.replace(/z/g, ' ')}</h3> 
-        <h2 className = "songtab" key={lyric.id}>{lyric.words}</h2>
+        <h3  key={lyric.id}>{lyric.chords}</h3> 
+        <h2 key={lyric.id}>{lyric.words}</h2>
       </div>
     )
 

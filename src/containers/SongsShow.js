@@ -7,9 +7,15 @@ class SongsShow extends React.Component {
     
   const renderLyrics = this.props.song.lyrics.map(lyric =>
     
-    <div> 
-      <h3>{lyric.chords.replace(/z/g, " ")}</h3> 
-      <h2 key={lyric.id}>{lyric.words}</h2>
+    <div>
+    <td> 
+     
+      <tr><h3>{lyric.chords}</h3> </tr>
+      
+      
+     <tr> <h2 key={lyric.id}>{lyric.words}</h2></tr>
+     </td>
+    
     </div>
 
 );
@@ -18,7 +24,7 @@ class SongsShow extends React.Component {
       
  
   <div className = "songtab">
-    <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
+    <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
     {renderLyrics}
   </div>
   )
