@@ -9,15 +9,15 @@ class RenderLyrics extends React.Component {
   
  
   render() {
-
-
     
+
     const showAll = this.props.lyric.map(lyric=>
-     <div> 
-    <h3 classname="songtab" key={lyric.id}>{lyric.chords}</h3> 
-    <h2 className = "songtab" key={lyric.id}>{lyric.words}</h2>
-    </div>
+      <div>     
+        <h3 classname="songtab" key={lyric.id}>{lyric.chords.replace(/z/g, ' ')}</h3> 
+        <h2 className = "songtab" key={lyric.id}>{lyric.words}</h2>
+      </div>
     )
+
     return (
     
       <div>

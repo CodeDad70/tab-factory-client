@@ -6,6 +6,7 @@ import {createLyric} from '../actions/lyrics';
 import LyricsNew from './LyricsNew';
 import LyricsShow from './LyricsShow';
 import {getSongs} from '../actions/songs';
+import {setChords} from '../actions/chords';
 import Navbar from './NavBar'
 
 
@@ -29,9 +30,9 @@ class Lyricform extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault(); 
     this.props.getSongs();
+    this.props.setChords();
     this.setState({ fireRedirect: true });
     this.props.createLyric(this.props.lyricFormData);
-    this.setState({ lyric: [...this.props.lyricFormData, this.state.lyric]});
   }
 
 

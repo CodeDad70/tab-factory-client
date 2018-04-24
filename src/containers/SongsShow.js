@@ -6,10 +6,10 @@ class SongsShow extends React.Component {
   render() {
     
   const renderLyrics = this.props.song.lyrics.map(lyric =>
-  
+    
     <div> 
-    <h3 classname="songtab" key={lyric.id}>{lyric.chords}</h3> 
-    <h2 className = "songtab" key={lyric.id}>{lyric.words}</h2>
+      <h3>{lyric.chords.replace(/z/g, " ")}</h3> 
+      <h2 key={lyric.id}>{lyric.words}</h2>
     </div>
 
 );

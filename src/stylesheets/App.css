@@ -2,6 +2,9 @@
   background-color: #515050;
 }
 
+*{
+font-family: monospace !important;
+}
 
 
 .App-logo {
@@ -40,6 +43,7 @@
   width:70%;
   color: rgb(255, 255, 255);
   float:right;
+  white-space: pre;
 }
 
 .welcome {
