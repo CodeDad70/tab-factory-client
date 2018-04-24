@@ -51,31 +51,28 @@ class Songform extends React.Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
 
-          <div>
-            <label htmlFor="name">Name: </label>
+          
+            <label htmlFor="name"><h2>Name: </h2></label>
               <input 
-                type ="text" 
-                className = "songform" 
+                type ="text"  
                 onChange={this.handleOnChange}
                 name="name"
                 value={name}
               />
-          </div>
           
-          <br/>
+          
+          <br/><br/>
 
-          <div>
-            <label htmlFor="artist">Artist: </label>
+          
+            <label htmlFor="artist"><h2>Artist: </h2></label>
               <input 
                 type ="text" 
-                className = "songform" 
                 onChange={this.handleOnChange}
                 name="artist"
                 value={artist}
               />
-          </div> 
-
-          <br/>  
+          
+          <br/><br/>  
           
         
 

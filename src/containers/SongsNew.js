@@ -20,15 +20,15 @@ class SongsNew extends React.Component {
   render() {
     
     return (
-      <div>
+      
        
-      <div className="songtab">
+      <div className="main-stage">
        
-        <h3> Create a new tab: </h3>
+        <h1> Create a new tab: </h1>
         <Songform/>
       </div>
      
-      </div>
+      
     
     )
   }
