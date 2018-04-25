@@ -5,6 +5,7 @@ import {getSongs} from '../actions/songs';
 import Lyricform from './Lyricform';
 import RenderLyrics from '../components/RenderLyrics';
 import '../stylesheets/App.css';
+import SongDelete from './SongDelete';
 
 
 class LyricsShow extends React.Component {
@@ -23,7 +24,7 @@ class LyricsShow extends React.Component {
     
       <div className = "songtab">
          <h1>{this.props.song.name} by {this.props.song.artist}</h1>
-    
+         <SongDelete/>
      
       <td>  
       <tr>

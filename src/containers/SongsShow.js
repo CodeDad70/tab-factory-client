@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SongDelete from './SongDelete';
+
 
 class SongsShow extends React.Component { 
+
   
   render() {
     
@@ -10,10 +13,10 @@ class SongsShow extends React.Component {
     <div>
     <td> 
      
-      <tr>
-      <div className="chordfont">{lyric.chords}</div>
-      <h2 key={lyric.id}>{lyric.words}</h2>
-      </tr>
+     
+      <tr className="chordfont">{lyric.chords}</tr>
+      <tr><h2 key={lyric.id}>{lyric.words}</h2></tr>
+     
     
     </td>
     
@@ -26,6 +29,7 @@ class SongsShow extends React.Component {
  
   <div className = "songtab">
     <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
+    <SongDelete/>
     {renderLyrics}
   </div>
   )
@@ -33,7 +37,7 @@ class SongsShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const song = state.songs.find(song => song.id == ownProps.match.params.songId)
+  const song = state.songs.find(song => song.id == ownProps.match.params.songId);
 
   if (song){
     return {song}
@@ -43,3 +47,4 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps)(SongsShow);
+

@@ -19,12 +19,12 @@ const addSong = (song) => {
   }
 }
 
+
 //**Async Actions
 export const getSongs = () => {
   return dispatch => {
     return fetch('http://localhost:3001/api/songs')
-      .then(response => response.json())
-      
+      .then(response => response.json())     
       .then(songs => dispatch(setSongs(songs)))
       .then(console.log("c"))
       .catch(error => {
@@ -46,6 +46,26 @@ export const createSong = song => {
       dispatch(addSong(song))
       dispatch(resetSongForm())
     })
+    .catch(error => console.log(error))
+  }
+}
+
+export const deleteSong = song => {
+  
+  return dispatch => {
+    return fetch (`http://localhost:3001/api/songs/${song.id}`,{
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({song: song})
+    })
+    .then(response => response.json())
+    .then(song => {
+      dispatch(getSongs())
+     
+    })
+    
     .catch(error => console.log(error))
   }
 }

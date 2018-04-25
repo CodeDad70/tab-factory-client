@@ -62,6 +62,8 @@ font-family: monospace !important;
   
 }
 
+
+
 .welcome {
   text-align: center;
   width:40%;
@@ -144,4 +146,8 @@ input[type="text-chords"]
 
 .LyricForm {
   width: 500px;
+}
+
+.lyric-render{
+  padding-bottom: 100px;
 }

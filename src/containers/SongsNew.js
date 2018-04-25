@@ -4,32 +4,24 @@ import NavBar from './NavBar'
 import Songform from './Songform';
 
 
-import {getSongs} from '../actions/songs';
+import { getSongs } from '../actions/songs';
 
 import '../stylesheets/App.css';
 
 class SongsNew extends React.Component {
-  
+
   componentDidMount() {
     this.props.getSongs();
-    
+
   }
 
-  
-  
   render() {
-    
     return (
-      
-       
+
       <div className="main-stage">
-       
         <h1> Create a new tab: </h1>
-        <Songform/>
+        <Songform />
       </div>
-     
-      
-    
     )
   }
 }
@@ -41,4 +33,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { getSongs })(SongsNew);
-;

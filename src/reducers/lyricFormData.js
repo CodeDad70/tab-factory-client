@@ -1,15 +1,15 @@
-const initialState = {words:'', song_id:'', chords:'                                                                                              '}
+const initialState = { words: '', song_id: '', chords: '                                                                                              ' }
 
-export default (state=initialState, action ) => {
+export default (state = initialState, action) => {
   console.log(state)
-   switch(action.type) {
+  switch (action.type) {
     case 'LYRIC_UPDATED_DATA':
       return action.lyricFormData;
 
     case 'RESET_LYRIC_FORM':
-      return initialState;  
+      return initialState;
 
-    default: 
+    default:
       return state;
   }
 }
