@@ -4,3 +4,11 @@ export const currentSong = (song) => {
     song
   }
 }
+
+export const emptySong = () => {
+  return {
+    type: 'EMPTY_SONG',
+    
+  }
+}
+

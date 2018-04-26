@@ -1,19 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SongDelete from './SongDelete';
-import {currentSong} from '../actions/song'
+import {currentSong} from '../actions/song';
 
 
 class SongsShow extends React.Component { 
 
-  componentDidMount() {
-    this.props.currentSong(this.props.song);
-    
-  }
+  
   
   render() {
-
-  const renderLyrics = this.props.song.lyrics.map(lyric =>
+    this.props.currentSong(this.props.song);
+    const renderLyrics = this.props.song.lyrics.map(lyric =>
     
     <div>
     <td> 
@@ -33,9 +30,8 @@ class SongsShow extends React.Component {
       
     
   <div className = "songtab">
-    <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
+    <h1>{this.props.song.name} by {this.props.song.artist}   <SongDelete/></h1> 
     
-    <SongDelete/>
     {renderLyrics}
   </div>
   )
@@ -44,8 +40,6 @@ class SongsShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const song = state.songs.find(song => song.id == ownProps.match.params.songId);
-  console.log(song, "songshow")
-  
     return {
       song,
       songs: state.songs,
