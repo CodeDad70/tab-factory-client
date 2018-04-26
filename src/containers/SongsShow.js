@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SongDelete from './SongDelete';
 import {currentSong} from '../actions/song';
+import EditButton from '../components/EditButton'
 
 
 class SongsShow extends React.Component { 
@@ -30,9 +31,12 @@ class SongsShow extends React.Component {
       
     
   <div className = "songtab">
-    <h1>{this.props.song.name} by {this.props.song.artist}   <SongDelete/></h1> 
+    <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
     
     {renderLyrics}
+
+       <SongDelete/> 
+       <EditButton/>
   </div>
   )
   }

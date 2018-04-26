@@ -2,7 +2,7 @@
 import React from 'react';
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
-import { updateLyricFormData } from '../actions/lyricForm';
+import { updateSongEditData } from '../actions/songEdit';
 import { createLyric } from '../actions/lyrics';
 import { getSongs } from '../actions/songs';
 
@@ -34,7 +34,7 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { name, artist, lyrics } = this.props.songEditData;
+    const { name, artist, lyrics } = this.props.song;
 
     return (
 
@@ -42,7 +42,28 @@ class Lyricform extends React.Component {
 
         <form onSubmit={this.handleOnSubmit} >
 
-         
+          <div>
+            <label htmlFor="name"><h2>Name: </h2></label>
+              <input
+                type="text"
+                onChange={this.handleOnChange}
+                name="name"
+                value={name}
+              />
+          </div>
+          
+          <br/><br/>
+
+          <div>
+            <label htmlFor="artist"><h2>Artist: </h2></label>
+             <input
+                type="text"
+                onChange={this.handleOnChange}
+                name="artist"
+                value={artist}
+              />
+          </div>
+          
         
         </form>
 
@@ -65,7 +86,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {
-  updateLyricFormData,
+  updateSongEditData,
   createLyric,
   getSongs
 

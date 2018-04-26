@@ -34,7 +34,7 @@ class EditButton extends React.Component {
         
         {fireRedirect && (
           
-          <Redirect to={'/'} />
+          <Redirect to={'/song/edit'} />
         )}
       </div>
     )
