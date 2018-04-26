@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import {deleteSong} from '../actions/songs';
 import { getSongs } from '../actions/songs';
+import {emptySong} from '../actions/song';
 import NavBar from './NavBar';
 
 import LyricsNew from './LyricsNew';
@@ -21,6 +22,7 @@ class SongDelete extends React.Component {
   handleOnClick = () => {
     this.props.getSongs();
     this.props.deleteSong(this.props.song);
+    this.props.emptySong(this.props.song);
     this.setState({ fireRedirect: true })
   }
   
@@ -58,6 +60,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   deleteSong,
-  getSongs
+  getSongs,
+  emptySong,
   
 })(SongDelete);
