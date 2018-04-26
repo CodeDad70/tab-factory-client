@@ -1,4 +1,5 @@
 import {resetSongForm} from './songForm';
+import {resetSongEdit} from './songEdit';
 
 
 
@@ -45,6 +46,24 @@ export const createSong = song => {
     .then(song => {
       dispatch(addSong(song))
       dispatch(resetSongForm())
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const updateSong = song => {
+  return dispatch => {
+    return fetch (`http://localhost:3001/api/songs/${song.id}`,{
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({song: song})
+    })
+    .then(response => response.json())
+    .then(song => {
+      dispatch(addSong(song))
+      dispatch(resetSongEdit())
     })
     .catch(error => console.log(error))
   }
