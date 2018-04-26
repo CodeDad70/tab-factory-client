@@ -1,7 +1,7 @@
 const initialState = {name:'', artist: '', lyrics:''}
 
 export default (state=initialState, action ) => {
-  console.log(state)
+  
    switch(action.type) {
     case 'UPDATED_DATA':
       return action.songFormData;

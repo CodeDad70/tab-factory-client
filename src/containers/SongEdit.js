@@ -8,7 +8,7 @@ import { getSongs } from '../actions/songs';
 
 
 
-class Lyricform extends React.Component {
+class SongEdit extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +19,7 @@ class Lyricform extends React.Component {
   handleOnChange = event => {
     const { name, value } = event.target
     const currentSongEditData = Object.assign({}, this.props.songEditData, {
-      [name]: value, song_id: this.props.song.id
+      [name]: value
     })
     this.props.updateSongEditData(currentSongEditData)
   }
@@ -38,7 +38,7 @@ class Lyricform extends React.Component {
 
     return (
 
-      <div >
+      <div className= "songtab" >
 
         <form onSubmit={this.handleOnSubmit} >
 
@@ -48,7 +48,8 @@ class Lyricform extends React.Component {
                 type="text"
                 onChange={this.handleOnChange}
                 name="name"
-                value={name}
+                
+                defaultValue={this.props.song.name}
               />
           </div>
           
@@ -60,7 +61,7 @@ class Lyricform extends React.Component {
                 type="text"
                 onChange={this.handleOnChange}
                 name="artist"
-                value={artist}
+                defaultValue={artist}
               />
           </div>
           
@@ -90,4 +91,4 @@ export default connect(mapStateToProps, {
   createLyric,
   getSongs
 
-})(Lyricform);
+})(SongEdit);

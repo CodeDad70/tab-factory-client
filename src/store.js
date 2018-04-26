@@ -11,6 +11,7 @@ import songFormData from './reducers/songFormData';
 import lyrics from './reducers/lyrics';
 import lyricFormData from './reducers/lyricFormData';
 import lyric from './reducers/lyric';
+import songEditData from './reducers/songEditData';
 
 
 const reducers = combineReducers({
