@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NavBar from './NavBar'
 import Songform from './Songform';
 
 

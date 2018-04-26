@@ -4,10 +4,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateLyricFormData } from '../actions/lyricForm';
 import { createLyric } from '../actions/lyrics';
-import LyricsNew from './LyricsNew';
-import LyricsShow from './LyricsShow';
 import { getSongs } from '../actions/songs';
-import Navbar from './NavBar'
 
 
 
@@ -38,7 +35,7 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { words, song_id, chords } = this.props.lyricFormData;
+    const { words, chords } = this.props.lyricFormData;
 
     return (
 

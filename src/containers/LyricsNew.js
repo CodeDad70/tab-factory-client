@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NavBar from './NavBar'
 import { getSongs } from '../actions/songs';
-import Lyricform from './Lyricform'
-import LyricsShow from './LyricsShow';
+import Lyricform from './Lyricform';
 import '../stylesheets/App.css';
 
 class LyricsNew extends React.Component {

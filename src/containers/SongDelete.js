@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import {deleteSong} from '../actions/songs';
 import { getSongs } from '../actions/songs';
 import {emptySong} from '../actions/song';
-import NavBar from './NavBar';
-
-import LyricsNew from './LyricsNew';
 
 class SongDelete extends React.Component {
 

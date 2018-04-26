@@ -1,7 +1,4 @@
 import {resetLyricForm} from './lyricForm';
-import {currentSong} from './song';
-
-
 
 // **Action Creators
 

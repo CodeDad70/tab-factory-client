@@ -1,8 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-
-import Lyricform from '../containers/Lyricform'
 import '../stylesheets/App.css';
 
 class RenderLyrics extends React.Component {

@@ -6,8 +6,6 @@ import { createSong } from '../actions/songs';
 import { emptyLyric } from '../actions/lyrics';
 import { getSongs } from '../actions/songs';
 
-import LyricsNew from './LyricsNew';
-
 class Songform extends React.Component {
 
   componentDidMount() {
