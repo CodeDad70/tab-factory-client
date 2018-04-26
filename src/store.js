@@ -20,6 +20,7 @@ const reducers = combineReducers({
   songs,
   songFormData,
   song, 
+  songEditData,
 });
 
 const middleware = [thunk];
