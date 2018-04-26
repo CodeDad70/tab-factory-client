@@ -34,7 +34,7 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { words, chords } = this.props.song;
+    const { name, artist, lyrics } = this.props.songEditData;
 
     return (
 
@@ -57,7 +57,7 @@ class Lyricform extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    lyricFormData: state.lyricFormData,
+    songEditData: state.songEditData,
     song: state.song,
     songs: state.songs,
     lyrics: state.lyrics

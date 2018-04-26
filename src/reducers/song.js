@@ -3,7 +3,9 @@ export default (state=[], action ) => {
   switch(action.type) {
 
     case 'EMPTY_SONG':
-      return action.song=[];   
+      return action.song=[];
+      
+      
 
    
     case 'CURRENT_SONG':

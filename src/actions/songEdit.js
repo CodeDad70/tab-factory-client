@@ -1,7 +1,7 @@
 // ** Action Creators
 export const updateSongEditData = songEditData => {
   return {
-    type: 'UPDATED_DATA',
+    type: 'UPDATED_SONG_DATA',
     songEditData
   }
 }
