@@ -1,4 +1,4 @@
-const currentSong = (song) => {
+export const currentSong = (song) => {
   return {
     type: 'CURRENT_SONG',
     song
