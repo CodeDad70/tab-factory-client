@@ -34,7 +34,7 @@ class Lyricform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { words, chords } = this.props.songEditData;
+    const { words, chords } = this.props.song;
 
     return (
 
@@ -42,61 +42,7 @@ class Lyricform extends React.Component {
 
         <form onSubmit={this.handleOnSubmit} >
 
-          Enter your chords here: <br /><br />
-
-           <div>
-            <label htmlFor="name"><h2>Name: </h2></label>
-              <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="name"
-                value={name}
-                defaultValue= {this.props.song.name}
-              />
-          </div>
-          
-          <br/><br/>
-
-          <div>
-            <label htmlFor="artist"><h2>Artist: </h2></label>
-             <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="artist"
-                value={artist}
-                defaultValue= {this.props.song.artist}
-              />
-          </div>
-          
-          <br/><br/>
-
-
-          <input
-            type="text-chords"
-            className="lyricform"
-            onChange={this.handleOnChange}
-            name="chords"
-            value={chords}
-            defaultValue= {this.props.song.name}
-          />
-
-          <div className="lyric-render">
-            <h2>{words}</h2>
-          </div>
-
-          <div>
-            <input
-              type="text"
-              className="LyricForm"
-              onChange={this.handleOnChange}
-              name="words"
-              value={words}
-            />
-          </div>
-
-          <br/>
-
-          <button type="submit"> Create Lyric </button>
+         
         
         </form>
 
