@@ -1,4 +1,5 @@
 import {resetLyricForm} from './lyricForm';
+import {resetLyricEditData} from './lyricEdit';
 
 // **Action Creators
 
@@ -52,6 +53,23 @@ export const createLyric = lyric => {
     .then(lyric => {
       dispatch(addLyric(lyric))
       dispatch(resetLyricForm())
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const updateLyric = lyric => {
+  return dispatch => {
+    return fetch (`http://localhost:3001/api/lyrics/${lyric.id}`,{
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({lyric: lyric})
+    })
+    .then(response => response.json())
+    .then(lyric => {
+      dispatch(resetLyricEditData())
     })
     .catch(error => console.log(error))
   }
