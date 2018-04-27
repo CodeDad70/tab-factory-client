@@ -16,7 +16,7 @@ class SongEdit extends React.Component {
   }
 
   handleOnChange = event => {
-    const { name, value, defaultValue } = event.target
+    const { name, value} = event.target
     
     const currentSongEditData = Object.assign({}, this.props.songEditData, {
       [name]: value, id: this.props.song.id
@@ -33,7 +33,7 @@ class SongEdit extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { name, artist, lyrics } = this.props.song;
+    const { name, artist } = this.props.song;
 
     return (
 
@@ -48,7 +48,7 @@ class SongEdit extends React.Component {
                 onChange={this.handleOnChange}
                 name="name"
                 
-                defaultValue={this.props.song.name}
+                defaultValue={name}
               />
           </div>
           

@@ -4,9 +4,6 @@ export default (state=[], action ) => {
 
     case 'EMPTY_SONG':
       return action.song=[];
-      
-      
-
    
     case 'CURRENT_SONG':
       return action.song;
