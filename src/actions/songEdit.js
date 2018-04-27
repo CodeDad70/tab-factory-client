@@ -6,7 +6,7 @@ export const updateSongEditData = songEditData => {
   }
 }
 
-export const resetSongEdit = () => {
+export const resetSongEditData = () => {
   return {
     type: 'RESET_SONG_FORM'
   }

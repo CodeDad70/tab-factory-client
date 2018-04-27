@@ -8,7 +8,8 @@ export default (state=[], action ) => {
       return action.songEditData;
 
     case 'RESET_SONG_FORM':
-      return state;  
+      return action.songEditData=[];
+      
 
     default: 
       return state;

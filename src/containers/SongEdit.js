@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
@@ -31,6 +30,7 @@ class SongEdit extends React.Component {
     this.props.getSongs();
     this.setState({ fireRedirect: true });
     this.props.updateSong(this.props.songEditData);
+    this.props.getSongs();
   }
 
 

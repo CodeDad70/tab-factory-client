@@ -1,5 +1,5 @@
 import {resetSongForm} from './songForm';
-import {resetSongEdit} from './songEdit';
+import {resetSongEditData} from './songEdit';
 
 
 
@@ -62,7 +62,7 @@ export const updateSong = song => {
     })
     .then(response => response.json())
     .then(song => {
-      dispatch(resetSongEdit())
+      dispatch(resetSongEditData())
     })
     .catch(error => console.log(error))
   }
