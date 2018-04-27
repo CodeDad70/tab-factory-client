@@ -1,12 +1,12 @@
 // ** Action Creators
-export const updateSongEditData = lyricEditData => {
+export const updateLyricEditData = lyricEditData => {
   return {
     type: 'UPDATED_LYRIC_DATA',
     lyricEditData
   }
 }
 
-export const resetSongEditData = () => {
+export const resetLyricEditData = () => {
   return {
     type: 'RESET_LYRIC_FORM'
   }

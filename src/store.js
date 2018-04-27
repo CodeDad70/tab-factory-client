@@ -12,12 +12,14 @@ import lyrics from './reducers/lyrics';
 import lyricFormData from './reducers/lyricFormData';
 import lyric from './reducers/lyric';
 import songEditData from './reducers/songEditData';
+import lyricEditData from './reducers/lyricEditData';
 
 
 const reducers = combineReducers({
   lyrics,
   lyricFormData,
   lyric,
+  lyricEditData,
   songs,
   songFormData,
   song, 
