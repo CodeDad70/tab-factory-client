@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
 import { createLyric } from '../actions/lyrics';
 import { updateSong } from '../actions/songs';
-import { getSongs } from '../actions/songs';
 
 
 
@@ -27,10 +26,8 @@ class SongEdit extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.getSongs();
     this.setState({ fireRedirect: true });
     this.props.updateSong(this.props.songEditData);
-    this.props.getSongs();
   }
 
 
@@ -93,6 +90,5 @@ export default connect(mapStateToProps, {
   updateSongEditData,
   updateSong,
   createLyric,
-  getSongs
 
 })(SongEdit);

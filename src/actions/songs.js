@@ -63,6 +63,7 @@ export const updateSong = song => {
     .then(response => response.json())
     .then(song => {
       dispatch(resetSongEditData())
+      dispatch(getSongs())
     })
     .catch(error => console.log(error))
   }
