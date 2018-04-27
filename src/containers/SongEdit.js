@@ -47,7 +47,6 @@ class SongEdit extends React.Component {
                 type="text"
                 onChange={this.handleOnChange}
                 name="name"
-                
                 defaultValue={name}
               />
           </div>
