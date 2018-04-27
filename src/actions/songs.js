@@ -62,7 +62,6 @@ export const updateSong = song => {
     })
     .then(response => response.json())
     .then(song => {
-      dispatch(addSong(song))
       dispatch(resetSongEdit())
     })
     .catch(error => console.log(error))

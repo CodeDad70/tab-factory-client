@@ -4,6 +4,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
 import { createLyric } from '../actions/lyrics';
+import { updateSong } from '../actions/songs';
 import { getSongs } from '../actions/songs';
 
 
@@ -17,9 +18,10 @@ class SongEdit extends React.Component {
   }
 
   handleOnChange = event => {
-    const { name, value } = event.target
+    const { name, value, defaultValue } = event.target
+    
     const currentSongEditData = Object.assign({}, this.props.songEditData, {
-      [name]: value
+      [name]: value, id: this.props.song.id
     })
     this.props.updateSongEditData(currentSongEditData)
   }
@@ -28,7 +30,7 @@ class SongEdit extends React.Component {
     event.preventDefault();
     this.props.getSongs();
     this.setState({ fireRedirect: true });
-    this.props.editSong(this.props.songEditData);
+    this.props.updateSong(this.props.songEditData);
   }
 
 
@@ -65,11 +67,12 @@ class SongEdit extends React.Component {
               />
           </div>
           
+          <button type="submit"> Save Song </button>
         
         </form>
 
         {fireRedirect && (
-          <Redirect to={'/lyrics/show'} />
+          <Redirect to={'/'} />
         )}
 
       </div>
@@ -88,6 +91,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   updateSongEditData,
+  updateSong,
   createLyric,
   getSongs
 
