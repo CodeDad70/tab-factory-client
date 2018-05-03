@@ -36,9 +36,23 @@ class SongEdit extends React.Component {
   render() {
     const { fireRedirect } = this.state
     const { name, artist, lyrics,  words, chords, song_id, id } = this.props.song;
-    const fieldCount = this.props.song.lyrics.length
-    let count
     
+    const QuestionFields = () => (
+
+     this.props.song.lyrics.map (( lyric, i ) => (
+        <div key={`lyric${i}`}>
+          
+            <label htmlFor={`lyric${i}`}>Chords</label>
+            <Text defaultValue={lyric.chords} field={['chords', i]} id={`lyric${i}`} />
+            <label htmlFor={`lyric${i}`}>Lyric</label>
+            <Text defaultValue={lyric.words} field={['lyrics', i]} field={['words', i]} id={`lyric${i}`} />
+          
+        </div>
+      ))
+       
+       
+        
+      )
 
       
 
@@ -46,33 +60,34 @@ class SongEdit extends React.Component {
       
       <div className= "songtab" >
 
-       <Form onSubmit={submittedValues => console.log(submittedValues, count) }>
+       <Form onSubmit={submittedValues => console.log(submittedValues) }>
           { formApi => (
-           
-             
-                <form onSubmit={formApi.submitForm} id="dynamic-form">
-                  <label htmlFor="name">Name</label>
-                  <Text field="name" id="name" />
-                  <label htmlFor="artist">Name</label>
-                  <Text field="artist" id="artist" />
-
-                  { this.props.song.lyrics.map( ( lyric, i ) => (
-                    <div key={`lyric${i}`}>
-                      <label htmlFor={`lyric-words-${i}`}>Lyric</label>
-                      <Text defaultValue={lyric.words} field={['lyric', i]} id={`lyric.words-${i}`} />
+            <form onSubmit={formApi.submitForm} id="form4">
+              <label htmlFor="name">Name</label>
+              <Text defaultValue = {name}field="name" id="name" />
+              <label htmlFor="artist">Artist</label>
+              <Text defaultValue = {artist} field="artist" id="artist" />
+              <br/><br/>
+              
+              
+                <NestedField field='lyrics'>
                      
+                  { this.props.song.lyrics.map( ( lyric, i ) => (
+                    <NestedField field='lyric'>
+                    <div key={`lyric${i}`}>
+                      <label htmlFor={`lyric.id`}>Chords</label>
+                      <Text defaultValue={lyric.chords} field={['chords', i]} id={`lyric${i}`} /><br/>
+                      <label htmlFor={`lyric.id`}>Lyric</label>
+                      <Text defaultValue={lyric.words} field={['words', i]} id={`lyric-${i}`} />
+                      <br/><br/>
                     </div>
+                    </NestedField>
                   ))}
-                  
+
+                </NestedField>
+
+
              
-
-
-
-
-
-
-
-
 
               <button type="submit" >
                 Submit
