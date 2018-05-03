@@ -38,22 +38,7 @@ class SongEdit extends React.Component {
     const { name, artist, lyrics,  words, chords, song_id, id } = this.props.song;
     const fieldCount = this.props.song.lyrics.length
     let count
-    const QuestionFields = () => (
-
-      this.props.song.lyrics.map ((lyric, index) =>
-      
-      <div>
-        <Text defaultValue = {lyric.id} field="id" type="hidden" />
-        <Text defaultValue = {lyric.song_id} field="song_id" type="hidden" />
-        <label htmlFor="chords">Chords</label>
-        <Text defaultValue = {lyric.chords} field="chords" key={index} /> <br/>
-        <label htmlFor="words">Lyric</label>
-        <Text defaultValue = {lyric.words} field="words"  /><br/><br/><br/>
-      </div>
-       
-       )
-        
-      )
+    
 
       
 
@@ -63,16 +48,31 @@ class SongEdit extends React.Component {
 
        <Form onSubmit={submittedValues => console.log(submittedValues, count) }>
           { formApi => (
-            <form onSubmit={formApi.submitForm} id="form4">
-              <label htmlFor="name">Name</label>
-              <Text defaultValue = {name}field="name" id="name" />
-              <label htmlFor="artist">Artist</label>
-              <Text defaultValue = {artist} field="artist" id="artist" />
-              <br/><br/>
-              
-              
-                <NestedField field={['test', 0]} component={QuestionFields} />
+           
              
+                <form onSubmit={formApi.submitForm} id="dynamic-form">
+                  <label htmlFor="name">Name</label>
+                  <Text field="name" id="name" />
+                  <label htmlFor="artist">Name</label>
+                  <Text field="artist" id="artist" />
+
+                  { this.props.song.lyrics.map( ( lyric, i ) => (
+                    <div key={`lyric${i}`}>
+                      <label htmlFor={`lyric-words-${i}`}>Lyric</label>
+                      <Text defaultValue={lyric.words} field={['lyric', i]} id={`lyric.words-${i}`} />
+                     
+                    </div>
+                  ))}
+                  
+             
+
+
+
+
+
+
+
+
 
               <button type="submit" >
                 Submit
