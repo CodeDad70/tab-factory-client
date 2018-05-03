@@ -4,68 +4,82 @@ import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
 import { createLyric } from '../actions/lyrics';
 import { updateSong } from '../actions/songs';
+import { Form, Text, NestedField } from 'react-form';
+
 
 
 
 class SongEdit extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
     this.state = {
       fireRedirect: false,
+       song: {
+        id: this.props.song.id,
+        name: '',
+        artist: '',
+        lyrics: [
+          {
+          id: '',    
+          words: '',
+          chords: '',
+          song_id: ''  
+          }
+        ]
+      }
     }
+
   }
 
-  handleOnChange = event => {
-    const { name, value} = event.target
-    
-    const currentSongEditData = Object.assign({}, this.props.songEditData, {
-      [name]: value, id: this.props.song.id
-    })
-    this.props.updateSongEditData(currentSongEditData)
-  }
-
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.setState({ fireRedirect: true });
-    this.props.updateSong(this.props.songEditData);
-  }
-
-
+  
   render() {
     const { fireRedirect } = this.state
-    const { name, artist } = this.props.song;
+    const { name, artist, lyrics,  words, chords, song_id, id } = this.props.song;
+    const fieldCount = this.props.song.lyrics.length
+    let count
+    const QuestionFields = () => (
+
+      this.props.song.lyrics.map ((lyric, index) =>
+      
+      <div>
+        <Text defaultValue = {lyric.id} field="id" type="hidden" />
+        <Text defaultValue = {lyric.song_id} field="song_id" type="hidden" />
+        <label htmlFor="chords">Chords</label>
+        <Text defaultValue = {lyric.chords} field="chords" key={index} /> <br/>
+        <label htmlFor="words">Lyric</label>
+        <Text defaultValue = {lyric.words} field="words"  /><br/><br/><br/>
+      </div>
+       
+       )
+        
+      )
+
+      
 
     return (
-
+      
       <div className= "songtab" >
 
-        <form onSubmit={this.handleOnSubmit} >
+       <Form onSubmit={submittedValues => console.log(submittedValues, count) }>
+          { formApi => (
+            <form onSubmit={formApi.submitForm} id="form4">
+              <label htmlFor="name">Name</label>
+              <Text defaultValue = {name}field="name" id="name" />
+              <label htmlFor="artist">Artist</label>
+              <Text defaultValue = {artist} field="artist" id="artist" />
+              <br/><br/>
+              
+              
+                <NestedField field={['test', 0]} component={QuestionFields} />
+             
 
-          <div>
-            <label htmlFor="name"><h2>Name: </h2></label>
-              <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="name"
-                defaultValue={name}
-              />
-          </div>
-          
-          <br/><br/>
-
-          <div>
-            <label htmlFor="artist"><h2>Artist: </h2></label>
-             <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="artist"
-                defaultValue={artist}
-              />
-          </div>
-          
-          <button type="submit"> Save Song </button>
-        
-        </form>
+              <button type="submit" >
+                Submit
+              </button>
+            </form>
+          )}
+        </Form>
 
         {fireRedirect && (
           <Redirect to={'/'} />

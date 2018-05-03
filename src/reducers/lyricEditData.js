@@ -1,14 +1,15 @@
-export default (state=[], action ) => {
+export default (state=[{}], action ) => {
 
 
   console.log(state)
    switch(action.type) {
      
     case 'UPDATED_LYRIC_DATA':
-      return action.lyricEditData;
+      
+    return action.lyricEditData;
 
     case 'RESET_LYRIC_FORM':
-      return action.lyricEditData=[];
+      return action.lyricEditData={};
       
 
     default: 

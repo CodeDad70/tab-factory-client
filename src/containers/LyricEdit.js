@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
 import { createLyric } from '../actions/lyrics';
 import { updateSong } from '../actions/songs';
+import {updateLyricEditData} from '../actions/lyricEdit';
+import {updateLyric} from '../actions/lyrics'
 
 
 
@@ -16,10 +18,10 @@ class LyricEdit extends React.Component {
   }
 
   handleOnChange = event => {
-    const { name, value} = event.target
+    const { name, value, id} = event.target
     
     const currentLyricEditData = Object.assign({}, this.props.lyricEditData, {
-      [name]: value, id: this.props.lyric.id
+      [name]: value, id:id
     })
     this.props.updateLyricEditData(currentLyricEditData)
   }
@@ -33,40 +35,54 @@ class LyricEdit extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { words, chords } = this.props.lyric;
+    const { words, chords } = this.props.song.lyrics;
 
+    
+    const renderLyrics = this.props.song.lyrics.map(lyric => 
+
+      
+      <div>
+        
+        <label htmlFor="chords"><h2>Chords: </h2></label>
+            
+            <input
+               type="text"
+               onChange={this.handleOnChange}
+               
+               name="chords"
+               id={lyric.id}
+               defaultValue={lyric.chords}
+             />
+
+        <label htmlFor="words"><h2>Lyric: </h2></label>
+        
+          <input
+            type="text"
+            onChange={this.handleOnChange}
+            
+            name="words"
+            id={lyric.id}
+            defaultValue={lyric.words}
+          />
+
+
+          </div>
+  
+      );
     return (
-
+      
       <div className= "songtab" >
-
+       
         <form onSubmit={this.handleOnSubmit} >
 
-          <div>
-            <label htmlFor="lyric"><h2>Lyric: </h2></label>
-              <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="words"
-                defaultValue={words}
-              />
-          </div>
-          
-          <br/><br/>
+        {renderLyrics}   
 
-          <div>
-            <label htmlFor="chords"><h2>Chords: </h2></label>
-             <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="chords"
-                defaultValue={chords}
-              />
-          </div>
-          
-          <button type="submit"> Save Song </button>
+        
+
+          <button type="submit"> Update Lyrics </button>
         
         </form>
-
+       
         {fireRedirect && (
           <Redirect to={'/'} />
         )}
@@ -87,7 +103,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   updateLyricEditData,
-  updateSong,
+  updateLyric,
   createLyric,
 
 })(LyricEdit);
