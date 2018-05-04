@@ -76,9 +76,9 @@ class SongEdit extends React.Component {
                     <NestedField field='lyric'>
                     <div key={`lyric${i}`}>
                       <label htmlFor={`lyric.id`}>Chords</label>
-                      <Text defaultValue={lyric.chords} field={['chords', i]} id={`lyric${i}`} /><br/>
-                      <label htmlFor={`lyric.id`}>Lyric</label>
-                      <Text defaultValue={lyric.words} field={['words', i]} id={`lyric-${i}`} />
+                      <Text defaultValue={lyric.chords} field={['chords', lyric.id]} id={`lyric${i}`} /><br/>
+                      <label htmlFor={`lyric-${i}`}>Lyric</label>
+                      <Text defaultValue={lyric.words} field={['words', lyric.id]} id={`lyric-${i}`} />
                       <br/><br/>
                     </div>
                     </NestedField>

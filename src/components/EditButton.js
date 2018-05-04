@@ -27,7 +27,7 @@ class EditButton extends React.Component {
 
 
     return (
-      <div>
+      <div className="song-card-buttons">
 
 
         <button onClick={this.handleOnClick}> Edit Song </button>

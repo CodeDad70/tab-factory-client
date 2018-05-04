@@ -33,7 +33,7 @@ class SongDelete extends React.Component {
 
 
     return (
-      <div>
+      <div className= "song-card-buttons" >
 
 
         <button onClick={this.handleOnClick}> Delete Song </button>

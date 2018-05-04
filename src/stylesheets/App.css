@@ -151,3 +151,46 @@ input[type="text-chords"]
 .lyric-render{
   padding-bottom: 100px;
 }
+
+.song-card {
+  width: 800px;
+ 
+
+  --webkit-box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
+  box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
+
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 2px solid #dbdbdb;
+background:  #d6002e; 
+  
+}
+
+.song-card-title {
+  text-align: center;
+  width: 796px;
+border-radius: 9px 0px 0px 0px;
+-moz-border-radius: 9px 0px 0px 0px;;
+-webkit-border-radius: 9px 0px 0px 0px;
+border: 2px solid #dbdbdb;
+  height: 50px;
+  background: #dbdbdb;
+  color:  rgba(0,0,0,0.75);
+  
+}
+
+.song-card-lyrics {
+  
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.song-card-buttons {
+ 
+  
+  padding-top: 30px;
+  display: inline-block;
+
+}

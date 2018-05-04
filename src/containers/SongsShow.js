@@ -31,12 +31,26 @@ class SongsShow extends React.Component {
       
     
   <div className = "songtab">
-    <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
+     
+    <div className = "song-card">
+       
     
+            
+    <div className="song-card-title">
+      <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
+    </div>
+    
+    <div className="song-card-lyrics">
     {renderLyrics}
+    </div>
 
-       <SongDelete/> 
-       <EditButton/>
+    
+      <SongDelete/> <EditButton/>
+    
+
+   
+       </div>
+      
   </div>
   )
   }
