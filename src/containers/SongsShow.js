@@ -10,22 +10,7 @@ class SongsShow extends React.Component {
   
   
   render() {
-    this.props.currentSong(this.props.song);
-    const renderLyrics = this.props.song.lyrics.map(lyric =>
     
-    <div>
-    <td> 
-     
-     
-      <tr className="chordfont">{lyric.chords}</tr>
-      <tr><h2 key={lyric.id}>{lyric.words}</h2></tr>
-     
-    
-    </td>
-    
-    </div>
-
-);
 
   return ( 
       
@@ -41,7 +26,7 @@ class SongsShow extends React.Component {
     </div>
     
     <div className="song-card-lyrics">
-    {renderLyrics}
+    {this.props.song.lyrics}
     </div>
 
     
@@ -60,9 +45,7 @@ const mapStateToProps = (state, ownProps) => {
   const song = state.songs.find(song => song.id == ownProps.match.params.songId);
     return {
       song,
-      songs: state.songs,
-      lyrics: state.lyrics,
-      lyric: state.lyric 
+      songs: state.songs, 
     };
   }
 

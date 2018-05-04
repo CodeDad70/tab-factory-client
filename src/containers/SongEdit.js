@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
-import { createLyric } from '../actions/lyrics';
 import { updateSong } from '../actions/songs';
 import { Form, Text, NestedField } from 'react-form';
 
@@ -15,21 +14,7 @@ class SongEdit extends React.Component {
     
     this.state = {
       fireRedirect: false,
-       song: {
-        id: this.props.song.id,
-        name: '',
-        artist: '',
-        lyrics: [
-          {
-          id: '',    
-          words: '',
-          chords: '',
-          song_id: ''  
-          }
-        ]
-      }
-    }
-
+    } 
   }
 
   
@@ -37,23 +22,7 @@ class SongEdit extends React.Component {
     const { fireRedirect } = this.state
     const { name, artist, lyrics,  words, chords, song_id, id } = this.props.song;
     
-    const QuestionFields = () => (
-
-     this.props.song.lyrics.map (( lyric, i ) => (
-        <div key={`lyric${i}`}>
-          
-            <label htmlFor={`lyric${i}`}>Chords</label>
-            <Text defaultValue={lyric.chords} field={['chords', i]} id={`lyric${i}`} />
-            <label htmlFor={`lyric${i}`}>Lyric</label>
-            <Text defaultValue={lyric.words} field={['lyrics', i]} field={['words', i]} id={`lyric${i}`} />
-          
-        </div>
-      ))
-       
-       
-        
-      )
-
+    
       
 
     return (
@@ -70,21 +39,9 @@ class SongEdit extends React.Component {
               <br/><br/>
               
               
-                <NestedField field='lyrics'>
-                     
-                  { this.props.song.lyrics.map( ( lyric, i ) => (
-                    <NestedField field='lyric'>
-                    <div key={`lyric${i}`}>
-                      <label htmlFor={`lyric.id`}>Chords</label>
-                      <Text defaultValue={lyric.chords} field={['chords', lyric.id]} id={`lyric${i}`} /><br/>
-                      <label htmlFor={`lyric-${i}`}>Lyric</label>
-                      <Text defaultValue={lyric.words} field={['words', lyric.id]} id={`lyric-${i}`} />
-                      <br/><br/>
-                    </div>
-                    </NestedField>
-                  ))}
-
-                </NestedField>
+                
+              <Text defaultValue = {lyrics} field="lyrics" id="lyrics" />
+               
 
 
              
@@ -105,18 +62,18 @@ class SongEdit extends React.Component {
   }
 }
 
+
 const mapStateToProps = state => {
   return {
     songEditData: state.songEditData,
     song: state.song,
     songs: state.songs,
-    lyrics: state.lyrics
+   
   }
 }
 
 export default connect(mapStateToProps, {
   updateSongEditData,
   updateSong,
-  createLyric,
 
-})(SongEdit);
+})(SongEdit)

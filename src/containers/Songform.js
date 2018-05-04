@@ -3,13 +3,13 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongFormData } from '../actions/songForm';
 import { createSong } from '../actions/songs';
-import { emptyLyric } from '../actions/lyrics';
+
 import { getSongs } from '../actions/songs';
 
 class Songform extends React.Component {
 
   componentDidMount() {
-    this.props.emptyLyric();
+   getSongs();
   }
 
   constructor() {
@@ -36,7 +36,7 @@ class Songform extends React.Component {
 
   render() {
     const { fireRedirect } = this.state
-    const { name, artist } = this.props.songFormData;
+    const { name, artist, lyrics } = this.props.songFormData;
 
     return (
       <div>
@@ -63,6 +63,16 @@ class Songform extends React.Component {
                 value={artist}
               />
           </div>
+
+          <div>
+            <label htmlFor="lyrics"><h2>Lyrics: </h2></label>
+             <input
+                type="text_field"
+                onChange={this.handleOnChange}
+                name="lyrics"
+                value={lyrics}
+              />
+          </div>
           
           <br/><br/>
 
@@ -81,13 +91,12 @@ class Songform extends React.Component {
 const mapStateToProps = state => {
   return {
     songFormData: state.songFormData,
-    lyric: state.lyric
+    
   }
 }
 
 export default connect(mapStateToProps, {
   updateSongFormData,
   createSong,
-  emptyLyric,
   getSongs,
 })(Songform);
