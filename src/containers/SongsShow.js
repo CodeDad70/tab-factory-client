@@ -22,11 +22,11 @@ class SongsShow extends React.Component {
     
             
     <div className="song-card-title">
-      <h1>{this.props.song.name} by {this.props.song.artist}</h1> 
+      <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
     </div>
     
     <div className="song-card-lyrics">
-    {this.props.song.lyrics}
+      <h4>{this.props.song.lyrics}</h4>
     </div>
 
     

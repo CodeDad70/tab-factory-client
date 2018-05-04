@@ -39,40 +39,45 @@ class Songform extends React.Component {
     const { name, artist, lyrics } = this.props.songFormData;
 
     return (
-      <div>
+     
+      <div className = "form-layout">
         <form onSubmit={this.handleOnSubmit}>
 
-          <div>
-            <label htmlFor="name"><h2>Name: </h2></label>
+        <div className="form-inline">
+            <label htmlFor="name"><h4>Name: </h4></label>
               <input
+              
                 type="text"
                 onChange={this.handleOnChange}
                 name="name"
                 value={name}
               />
-          </div>
+        
           
-          <br/><br/>
 
-          <div>
-            <label htmlFor="artist"><h2>Artist: </h2></label>
+
+          
+            <label htmlFor="artist"><h4>  Artist: </h4></label>
              <input
                 type="text"
                 onChange={this.handleOnChange}
                 name="artist"
                 value={artist}
               />
+         
           </div>
 
-          <div>
-            <label htmlFor="lyrics"><h2>Lyrics: </h2></label>
-             <input
-                type="text_field"
+          <div >
+            <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
+             <textarea
+                className = "form-control" rows="10" width="70%"
+                type="textarea"
                 onChange={this.handleOnChange}
                 name="lyrics"
                 value={lyrics}
               />
           </div>
+
           
           <br/><br/>
 
@@ -81,7 +86,7 @@ class Songform extends React.Component {
         </form>
         
         {fireRedirect && (
-          <Redirect to={'/lyrics'} />
+          <Redirect to={'/'} />
         )}
       </div>
     )

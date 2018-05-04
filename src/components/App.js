@@ -4,11 +4,12 @@ import SongsNew from '../containers/SongsNew';
 import SongsPage from './SongsPage';
 import SongsShow from '../containers/SongsShow';
 import NavBar from '../containers/NavBar';
-import LyricsNew from '../containers/LyricsNew';
-import LyricsShow from '../containers/LyricsShow';
 import EditPage from './EditPage';
 
 import '../stylesheets/App.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 
 
 
@@ -21,8 +22,6 @@ const App = (props) =>
       <Route exact path="/songs/show"  component={SongsShow}/>
       <Route path="/songs" component={SongsPage} />
       <Route exact path="/new" component={SongsNew} />
-      <Route exact path="/lyrics" component={LyricsNew}/>
-      <Route exact path="/lyrics/show" component={LyricsShow}/>
       <Route exact path="/song/edit" component={EditPage}/>
 
     </div>
