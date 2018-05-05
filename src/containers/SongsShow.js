@@ -10,6 +10,7 @@ class SongsShow extends React.Component {
   
   
   render() {
+    this.props.currentSong(this.props.song);
     
 
   return ( 

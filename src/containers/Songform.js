@@ -30,8 +30,8 @@ class Songform extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.setState({ fireRedirect: true })
-    this.props.getSongs();
     this.props.createSong(this.props.songFormData)
+    this.props.getSongs();
   }
 
   render() {

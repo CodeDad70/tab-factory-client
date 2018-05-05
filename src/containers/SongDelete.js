@@ -17,14 +17,15 @@ class SongDelete extends React.Component {
 
  
   handleOnClick = () => {
-    this.props.getSongs();
     this.props.deleteSong(this.props.song);
+    this.props.getSongs();
     this.props.emptySong(this.props.song);
     this.setState({ fireRedirect: true })
   }
   
   componentDidMount() {
     this.props.getSongs();
+
     
   }
 

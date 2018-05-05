@@ -5,6 +5,7 @@ import SongsPage from './SongsPage';
 import SongsShow from '../containers/SongsShow';
 import NavBar from '../containers/NavBar';
 import EditPage from './EditPage';
+import WelcomePage from './WelcomePage';
 
 import '../stylesheets/App.css';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -19,6 +20,7 @@ const App = (props) =>
     <div>
       
       <NavBar/>
+      <Route exact path="/"  component={WelcomePage}/>
       <Route exact path="/songs/show"  component={SongsShow}/>
       <Route path="/songs" component={SongsPage} />
       <Route exact path="/new" component={SongsNew} />
