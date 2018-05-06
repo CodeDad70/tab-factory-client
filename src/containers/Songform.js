@@ -86,7 +86,7 @@ class Songform extends React.Component {
         </form>
         
         {fireRedirect && (
-          <Redirect to={'/'} />
+          <Redirect to={'/song/view'} />
         )}
       </div>
     )

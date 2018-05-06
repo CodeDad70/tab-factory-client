@@ -1,6 +1,6 @@
 import {resetSongForm} from './songForm';
 import {resetSongEditData} from './songEdit';
-
+import {currentSong} from './song';
 
 
 // **Action Creators
@@ -46,6 +46,7 @@ export const createSong = song => {
     .then(song => {
       dispatch(addSong(song))
       dispatch(resetSongForm())
+      dispatch(getSongs())
     })
     .catch(error => console.log(error))
   }
@@ -64,6 +65,7 @@ export const updateSong = song => {
     .then(song => {
       dispatch(resetSongEditData())
       dispatch(getSongs())
+      dispatch(currentSong(song))
     })
     .catch(error => console.log(error))
   }
