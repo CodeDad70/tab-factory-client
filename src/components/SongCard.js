@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SongDelete from '../containers/SongDelete';
-import EditButton from './EditButton'
+import EditButton from './EditButton';
+
 
 class SongCard extends React.Component { 
 
