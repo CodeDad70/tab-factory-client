@@ -2,9 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import {getSongs} from "../actions/songs"
-import SongDelete from '../containers/SongDelete';
+import { Link } from 'react-router-dom';
 
-import EditButton from './EditButton'
 
 
 
@@ -26,13 +25,11 @@ class WelcomePage extends React.Component {
       </div>
       
       <div className="song-card-lyrics">
-        <h4>{song.lyrics}</h4>
+      <Link  className="link-style" key={song.id} to={`/songs/${song.id}`}><h5><i>See lyrics</i></h5> </Link>
+        
       </div>
   
       
-        <SongDelete/> <EditButton/>
-      
-  
      
          </div>
          <br/><br/>
