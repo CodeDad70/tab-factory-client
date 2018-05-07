@@ -3,20 +3,19 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongFormData } from '../actions/songForm';
 import { createSong } from '../actions/songs';
-
 import { getSongs } from '../actions/songs';
 
 class Songform extends React.Component {
 
   componentDidMount() {
-   getSongs();
+    getSongs();
   }
 
   constructor() {
     super();
     this.state = {
       fireRedirect: false,
-   }
+    }
   }
 
   handleOnChange = event => {
@@ -39,49 +38,47 @@ class Songform extends React.Component {
     const { name, artist, lyrics } = this.props.songFormData;
 
     return (
-     
-      <div className = "form-layout">
+
+      <div className="form-layout">
         <form onSubmit={this.handleOnSubmit}>
 
-        <div className="form-inline">
+          <div className="form-inline">
             <label htmlFor="name"><h4>Name: </h4></label>
-              <input
-              
-                type="text"
-                onChange={this.handleOnChange}
-                name="name"
-                value={name}
-              />
-      
-          
+            <input
+              type="text"
+              onChange={this.handleOnChange}
+              name="name"
+              value={name}
+            />
+
+
             <label htmlFor="artist"><h4>  Artist: </h4></label>
-             <input
-                type="text"
-                onChange={this.handleOnChange}
-                name="artist"
-                value={artist}
-              />
-         
+            <input
+              type="text"
+              onChange={this.handleOnChange}
+              name="artist"
+              value={artist}
+            />
+
           </div>
 
           <div >
             <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
-             <textarea
-                className = "form-control" rows="10" width="70%"
-                type="textarea"
-                onChange={this.handleOnChange}
-                name="lyrics"
-                value={lyrics}
-              />
+            <textarea
+              className="form-control" rows="10" width="70%"
+              type="textarea"
+              onChange={this.handleOnChange}
+              name="lyrics"
+              value={lyrics}
+            />
           </div>
 
-          
-          <br/><br/>
+
+          <br /><br />
 
           <button type="submit"> Create Song </button>
-        
+
         </form>
-        
         {fireRedirect && (
           <Redirect to={'/song/view'} />
         )}
@@ -93,7 +90,7 @@ class Songform extends React.Component {
 const mapStateToProps = state => {
   return {
     songFormData: state.songFormData,
-    
+
   }
 }
 
