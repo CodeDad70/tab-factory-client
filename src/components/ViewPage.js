@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SongDelete from '../containers/SongDelete';
 import {currentSong} from '../actions/song';
 import EditButton from './EditButton'
-import { getSongs } from '../actions/songs';
+import SongCard from './SongCard';
 
 class ViewPage extends React.Component { 
 
@@ -11,33 +11,12 @@ class ViewPage extends React.Component {
   
   render() {
 
-    
+    this.props.currentSong(this.props.song);
 
   return ( 
       
     
-  <div className = "songtab">
-     
-    <div className = "song-card">
-       
-    
-            
-    <div className="song-card-title">
-      <h2>{this.props.song.name} by {this.props.song.artist}</h2> 
-    </div>
-    
-    <div className="song-card-lyrics">
-      <h4>{this.props.song.lyrics}</h4>
-    </div>
-
-    
-      <SongDelete/> <EditButton/>
-    
-
-   
-       </div>
-      
-  </div>
+    <SongCard song={this.props.song}/>
   )
   }
 }
@@ -51,8 +30,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, 
-  {currentSong,
-    getSongs,
-  })(ViewPage);
-
+export default connect(mapStateToProps, {currentSong})(ViewPage);

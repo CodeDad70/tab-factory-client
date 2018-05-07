@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import {getSongs} from "../actions/songs"
 import { Link } from 'react-router-dom';
 
-
-
-
 class WelcomePage extends React.Component {
   
   
