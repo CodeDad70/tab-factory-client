@@ -58,8 +58,6 @@
   
 }
 
-
-
 .welcome {
   text-align: center;
   width:40%;
@@ -121,6 +119,11 @@
 
 .link-style {
   color:  #ffffff;
+  
+}
+
+.logo-link-style {
+  color:  #000000;
   
 }
 

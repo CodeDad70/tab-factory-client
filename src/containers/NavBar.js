@@ -17,9 +17,12 @@ class NavBar extends Component {
     return (
       <div>
         <div className = "Logo">
+        <Link className="logo-link-style" to={"/"}>
          <h1>The Tab Factory
           <img src={`/${logo}`} width="30px" height = "30px" alt="Gear Logo" className = "App-logo"/>
           </h1>
+          </Link>
+          
         </div>
 
         <div className= "Sidebar">
