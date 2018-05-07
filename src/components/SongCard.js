@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongDelete from '../containers/SongDelete';
+import DeleteSong from '../containers/DeleteSong';
 import EditButton from './EditButton';
 
 
@@ -26,7 +26,7 @@ class SongCard extends React.Component {
     </div>
 
     
-      <SongDelete/> <EditButton/>
+      <DeleteSong/> <EditButton/>
     
 
    

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongDelete from './SongDelete';
+import DeleteSong from './DeleteSong';
 import {currentSong} from '../actions/song';
 import EditButton from '../components/EditButton'
 import SongCard from '../components/SongCard';
@@ -19,7 +19,7 @@ class ViewPage extends React.Component {
     <div className = 'songtab'>
       <SongCard song={this.props.song}/>
     </div>
-    
+
   )
   }
 }

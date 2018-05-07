@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import {deleteSong} from '../actions/songs';
 import { getSongs } from '../actions/songs';
 import {emptySong} from '../actions/song';
+import DeleteButton from '../components/DeleteButton'
 
-class SongDelete extends React.Component {
+class DeleteSong extends React.Component {
 
   constructor() {
     super();
@@ -34,10 +35,10 @@ class SongDelete extends React.Component {
 
 
     return (
-      <div className= "song-card-buttons" >
+      <div onClick={this.handleOnClick} >
 
 
-        <button onClick={this.handleOnClick}> Delete Song </button>
+        <DeleteButton/>
         
         {fireRedirect && (
           
@@ -61,4 +62,4 @@ export default connect(mapStateToProps, {
   getSongs,
   emptySong,
   
-})(SongDelete);
+})(DeleteSong);
