@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DeleteSong from './DeleteSong';
 import {currentSong} from '../actions/song';
-import EditButton from '../components/EditButton';
 import SongCard from '../components/SongCard';
+
 
 
 class SongsShow extends React.Component { 
@@ -17,6 +16,7 @@ class SongsShow extends React.Component {
   return ( 
       
     <div className = 'songtab'>
+    
       <SongCard song={this.props.song}/>
     </div>
   )

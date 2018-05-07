@@ -1,9 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import {getSongs} from "../actions/songs"
-import SongCard from '../components/SongCard';
 import WelcomeCards from '../components/WelcomeCards';
 
 class WelcomePage extends React.Component {

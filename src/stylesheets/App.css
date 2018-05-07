@@ -190,18 +190,14 @@ border: 2px solid #dbdbdb;
 .song-card-edit {
   float:left;
   padding-top: 30px;
+  padding-bottom: 75px;
 }
 
 .song-card-delete {
   float:right;
   padding-top: 30px;
+  padding-bottom: 75px;
 }
-
-.song-card-buttons {
-  clear:left;
-  display: inline-block;
-}
-
 
 .textarea {
 	width: 600px;

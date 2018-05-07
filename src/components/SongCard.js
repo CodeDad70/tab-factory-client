@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import DeleteSong from '../containers/DeleteSong';
 import EditSong from '../containers/EditSong';
 
@@ -42,13 +41,6 @@ class SongCard extends React.Component {
   
   )
   }
-}
-
-const mapStateToProps = state => {
-  return {
-    song: state.song,
-    songs: state.songs
-  };
 }
 
 

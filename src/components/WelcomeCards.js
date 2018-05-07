@@ -1,7 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import DeleteSong from '../containers/DeleteSong';
-import EditSong from '../containers/EditSong';
 import { Link } from 'react-router-dom';
 
 
@@ -35,13 +32,6 @@ class WelcomeCards extends React.Component {
   
   )
   }
-}
-
-const mapStateToProps = state => {
-  return {
-    song: state.song,
-    songs: state.songs
-  };
 }
 
 
