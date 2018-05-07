@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Songform from './Songform';
-
-
-
-
 import { getSongs } from '../actions/songs';
 
-import '../stylesheets/App.css';
+
 
 class SongsNew extends React.Component {
 

@@ -72,7 +72,7 @@ class SongEdit extends React.Component {
                 defaultValue={lyrics}
               />
           </div>
-          
+          <br/>
           <button type="submit"> Save Song </button>
         
         </form>

@@ -197,6 +197,11 @@ border: 2px solid #dbdbdb;
   padding-top: 30px;
 }
 
+.song-card-buttons {
+  clear:left;
+  display: inline-block;
+}
+
 
 .textarea {
 	width: 600px;
