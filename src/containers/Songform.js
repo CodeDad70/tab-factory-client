@@ -61,6 +61,7 @@ class Songform extends React.Component {
             />
 
           </div>
+          <br/> <br/>
 
           <div >
             <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
