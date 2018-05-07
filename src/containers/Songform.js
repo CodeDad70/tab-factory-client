@@ -38,8 +38,15 @@ class Songform extends React.Component {
     const { name, artist, lyrics } = this.props.songFormData;
 
     return (
-
+      <div className="main-stage">
+      
       <div className="form-layout">
+
+      
+        <h1> Create a new tab: </h1>
+        
+      
+
         <form onSubmit={this.handleOnSubmit}>
 
           <div className="form-inline">
@@ -83,6 +90,7 @@ class Songform extends React.Component {
         {fireRedirect && (
           <Redirect to={'/song/view'} />
         )}
+      </div>
       </div>
     )
   }

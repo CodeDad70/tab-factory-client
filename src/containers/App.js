@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router,Route } from 'react-router-dom';
-import SongsNew from './SongsNew';
+import Songform from './Songform';
 import SongsPage from './SongsPage';
 import SongsShow from './SongsShow';
 import NavBar from './NavBar';
@@ -20,7 +20,7 @@ const App = (props) =>
       <Route exact path="/"  component={WelcomePage}/>
       <Route exact path="/songs/show"  component={SongsShow}/>
       <Route path="/songs" component={SongsPage} />
-      <Route exact path="/new" component={SongsNew} />
+      <Route exact path="/new" component={Songform} />
       <Route exact path="/song/edit" component={SongEdit}/>
       <Route exact path="/song/view" component={ViewPage}/>
 
