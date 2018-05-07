@@ -52,10 +52,7 @@ class Songform extends React.Component {
                 name="name"
                 value={name}
               />
-        
-          
-
-
+      
           
             <label htmlFor="artist"><h4>  Artist: </h4></label>
              <input

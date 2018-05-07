@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Songform from './Songform';
 
 
+
+
 import { getSongs } from '../actions/songs';
 
 import '../stylesheets/App.css';
@@ -19,6 +21,7 @@ class SongsNew extends React.Component {
 
       <div className="main-stage">
         <h1> Create a new tab: </h1>
+        
         <Songform />
       </div>
     )

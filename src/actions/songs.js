@@ -14,7 +14,6 @@ const setSongs = songs => {
 
 export const addSong = (song) => {
   return {
-    type: 'CREATE_SONG_SUCCESS',
     type: 'CURRENT_SONG',
     song
   }
