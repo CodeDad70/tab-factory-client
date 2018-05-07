@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router,Route } from 'react-router-dom';
 import SongsNew from './SongsNew';
-import SongsPage from '../components/SongsPage';
+import SongsPage from './SongsPage';
 import SongsShow from './SongsShow';
 import NavBar from './NavBar';
 import EditPage from '../components/EditPage';
