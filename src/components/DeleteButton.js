@@ -7,10 +7,11 @@ class DeleteButton extends React.Component {
     
 
     return (
-      <div className= "song-card-buttons" >
+      
+      <div className="song-card-delete">
 
 
-        <button > Delete Song </button>
+        <button> Delete Song </button>
        
       </div>
     )

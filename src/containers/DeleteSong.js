@@ -37,9 +37,9 @@ class DeleteSong extends React.Component {
     return (
       <div onClick={this.handleOnClick} >
 
-
-        <DeleteButton/>
         
+        <DeleteButton/>
+      
         {fireRedirect && (
           
           <Redirect to={'/'} />

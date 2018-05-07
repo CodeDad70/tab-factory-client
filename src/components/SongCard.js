@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import DeleteSong from '../containers/DeleteSong';
-import EditButton from './EditButton';
+import EditSong from '../containers/EditSong';
 
 
 class SongCard extends React.Component { 
@@ -23,10 +23,17 @@ class SongCard extends React.Component {
     
     <div className="song-card-lyrics">
       <h4>{this.props.song.lyrics}</h4>
-    </div>
+    </div >
 
     
-      <DeleteSong/> <EditButton/>
+     < div>
+    
+   <EditSong/>
+   
+   <DeleteSong/>
+    
+    </div>
+    
     
 
    
