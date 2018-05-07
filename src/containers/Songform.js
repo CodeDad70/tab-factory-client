@@ -84,7 +84,7 @@ class Songform extends React.Component {
 
           <br /><br />
 
-          <button type="submit"> Create Song </button>
+          <button type="submit" className="btn btn-success"> Create Song </button>
 
         </form>
         {fireRedirect && (

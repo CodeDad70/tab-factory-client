@@ -73,7 +73,7 @@ class SongEdit extends React.Component {
               />
           </div>
           <br/>
-          <button type="submit"> Save Song </button>
+          <button type="submit" className="btn btn-success"> Save Song </button>
         
         </form>
 

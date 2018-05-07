@@ -11,7 +11,7 @@ class EditButton extends React.Component {
       <div className = "song-card-edit">
 
 
-        <button> Edit Song </button>
+        <button className="btn btn-primary"> Edit Song </button>
         
        
       </div>
