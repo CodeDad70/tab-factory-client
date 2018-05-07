@@ -16,8 +16,9 @@ class SongsShow extends React.Component {
 
   return ( 
       
-    
-    <SongCard song={this.props.song}/>
+    <div className = 'songtab'>
+      <SongCard song={this.props.song}/>
+    </div>
   )
   }
 }

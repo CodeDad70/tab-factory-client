@@ -11,7 +11,7 @@ class SongCard extends React.Component {
   return ( 
       
     
-  <div className = "songtab">
+  
      
     <div className = "song-card">
        
@@ -32,7 +32,7 @@ class SongCard extends React.Component {
    
        </div>
       
-  </div>
+  
   )
   }
 }

@@ -5,7 +5,7 @@ import SongsPage from './SongsPage';
 import SongsShow from './SongsShow';
 import NavBar from './NavBar';
 import EditPage from '../components/EditPage';
-import WelcomePage from '../components/WelcomePage';
+import WelcomePage from './WelcomePage';
 import ViewPage from './ViewPage';
 import '../stylesheets/App.css';
 import 'bootstrap/dist/css/bootstrap.css'
