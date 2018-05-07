@@ -13,6 +13,7 @@ class WelcomePage extends React.Component {
      
     <div className = "songtab" >
       <SongCard song={song}/>
+      <br/><br/>
     </div>
     )
    
