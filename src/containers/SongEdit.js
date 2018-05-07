@@ -64,7 +64,7 @@ class SongEdit extends React.Component {
           <div >
             <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
              <textarea
-                className = "form-control" rows="10" width="70%"
+                className = "form-control" rows="20" width="70%"
                 type="textarea"
                 onChange={this.handleOnChange}
                 name="lyrics"

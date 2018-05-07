@@ -1,24 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {currentSong} from '../actions/song';
+import { currentSong } from '../actions/song';
 import SongCard from '../components/SongCard';
 
-class ViewPage extends React.Component { 
+class ViewPage extends React.Component {
 
-  
-  
   render() {
-
     this.props.currentSong(this.props.song);
 
-  return ( 
+    return (
       
-    
-    <div className = 'songtab'>
-      <SongCard song={this.props.song}/>
-    </div>
+      <div className='songtab'>
+        <SongCard song={this.props.song} />
+      </div>
 
-  )
+    )
   }
 }
 
@@ -29,6 +25,4 @@ const mapStateToProps = state => {
   };
 }
 
-
-
-export default connect(mapStateToProps, {currentSong})(ViewPage);
+export default connect(mapStateToProps, { currentSong })(ViewPage);
