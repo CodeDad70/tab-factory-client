@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongDelete from '../containers/SongDelete';
+import SongDelete from './SongDelete';
 import {currentSong} from '../actions/song';
-import EditButton from './EditButton'
-import SongCard from './SongCard';
+import EditButton from '../components/EditButton'
+import SongCard from '../components/SongCard';
 
 class ViewPage extends React.Component { 
 
