@@ -9,20 +9,18 @@ class ViewPage extends React.Component {
     this.props.currentSong(this.props.song);
 
     return (
-      
       <div className='songtab'>
-        <SongCard song={this.props.song} />
+        <SongCard song={this.props.song}/>
       </div>
-
-    )
-  }
-}
+    );
+  };
+};
 
 const mapStateToProps = state => {
   return {
     song: state.song,
     songs: state.songs
   };
-}
+};
 
-export default connect(mapStateToProps, { currentSong })(ViewPage);
+export default connect(mapStateToProps, {currentSong})(ViewPage);

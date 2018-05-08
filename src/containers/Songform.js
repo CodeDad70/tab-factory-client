@@ -19,7 +19,7 @@ class Songform extends React.Component {
   }
 
   handleOnChange = event => {
-    const { name, value } = event.target
+    const {name, value} = event.target
     const currentSongFormData = Object.assign({}, this.props.songFormData, {
       [name]: value
     })
@@ -34,63 +34,62 @@ class Songform extends React.Component {
   }
 
   render() {
-    const { fireRedirect } = this.state
-    const { name, artist, lyrics } = this.props.songFormData;
+    const {fireRedirect} = this.state
+    const {name, artist, lyrics} = this.props.songFormData;
 
     return (
       <div className="main-stage">
-      
-      <div className="form-layout">
 
-      
-        <h1> Create a new tab: </h1>
-        
-      
+        <div className="form-layout">
+          
+          <h1> Create a new tab: </h1>
+          
+          <form onSubmit={this.handleOnSubmit}>
 
-        <form onSubmit={this.handleOnSubmit}>
+            <div className="form-inline">
 
-          <div className="form-inline">
-            <label htmlFor="name"><h4>Name: </h4></label>
-            <input
-              type="text"
-              onChange={this.handleOnChange}
-              name="name"
-              value={name}
-            />
+              <label htmlFor="name"><h4>Name: </h4></label>
+              <input
+                type="text"
+                onChange={this.handleOnChange}
+                name="name"
+                value={name}
+              />
 
+              <label htmlFor="artist"><h4>  Artist: </h4></label>
+              <input
+                type="text"
+                onChange={this.handleOnChange}
+                name="artist"
+                value={artist}
+              />
 
-            <label htmlFor="artist"><h4>  Artist: </h4></label>
-            <input
-              type="text"
-              onChange={this.handleOnChange}
-              name="artist"
-              value={artist}
-            />
+            </div>
 
-          </div>
-          <br/> <br/>
+            <br/><br/>
 
-          <div >
-            <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
-            <textarea
-              className="form-control" rows="20" width="70%"
-              type="textarea"
-              onChange={this.handleOnChange}
-              name="lyrics"
-              value={lyrics}
-            />
-          </div>
+            <div>
+              <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
+              <textarea
+                className="form-control" rows="20" width="70%"
+                type="textarea"
+                onChange={this.handleOnChange}
+                name="lyrics"
+                value={lyrics}
+              />
+            </div>
 
+            <br/><br/>
 
-          <br /><br />
+            <button type="submit" className="btn btn-success"> Create Song </button>
 
-          <button type="submit" className="btn btn-success"> Create Song </button>
+          </form>
 
-        </form>
-        {fireRedirect && (
-          <Redirect to={'/song/view'} />
-        )}
-      </div>
+          {fireRedirect && (
+            <Redirect to={'/song/view'} />
+          )}
+
+        </div>
       </div>
     )
   }
@@ -99,7 +98,6 @@ class Songform extends React.Component {
 const mapStateToProps = state => {
   return {
     songFormData: state.songFormData,
-
   }
 }
 

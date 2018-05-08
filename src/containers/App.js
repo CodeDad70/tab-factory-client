@@ -14,8 +14,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 const App = (props) => 
 
   <Router>
-    <div>
-      
+    <div>  
       <NavBar/>
       <Route exact path="/"  component={WelcomePage}/>
       <Route exact path="/songs/show"  component={SongsShow}/>
@@ -23,11 +22,7 @@ const App = (props) =>
       <Route exact path="/new" component={Songform} />
       <Route exact path="/song/edit" component={SongEdit}/>
       <Route exact path="/song/view" component={ViewPage}/>
-
     </div>
-  
   </Router>;
-
-
 
 export default App;

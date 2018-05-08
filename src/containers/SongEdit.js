@@ -2,11 +2,12 @@ import React from 'react';
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongEditData } from '../actions/songEdit';
-import {emptySong} from '../actions/song'
+import { emptySong } from '../actions/song'
 import { updateSong } from '../actions/songs';
-import {currentSong} from '../actions/song';
+import { currentSong } from '../actions/song';
 
 class SongEdit extends React.Component {
+  
   constructor() {
     super();
     this.state = {
@@ -15,8 +16,7 @@ class SongEdit extends React.Component {
   }
 
   handleOnChange = event => {
-    const { name, value} = event.target
-    
+    const {name, value} = event.target
     const currentSongEditData = Object.assign({}, this.props.songEditData, {
       [name]: value, id: this.props.song.id
     })
@@ -25,63 +25,62 @@ class SongEdit extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.setState({ fireRedirect: true });  
+    this.setState({ fireRedirect: true });
     this.props.updateSong(this.props.songEditData);
-    
     this.props.currentSong(this.props.song);
   }
 
-
   render() {
-    const { fireRedirect } = this.state
-    const {  artist, lyrics } = this.props.song;
+    const {fireRedirect} = this.state
+    const {artist, lyrics} = this.props.song;
 
     return (
-
-      <div className= "main-stage" >
-      <div className = "form-layout">
-
-        <form onSubmit={this.handleOnSubmit} >
-
-          <div className="form-inline">
-            <label htmlFor="name"><h2>Name: </h2></label>
+      <div className="main-stage" >
+        
+        <div className="form-layout">
+          
+          <form onSubmit={this.handleOnSubmit} >
+            
+            <div className="form-inline">
+              <label htmlFor="name"><h2>Name: </h2></label>
               <input
                 type="text"
                 onChange={this.handleOnChange}
                 name="name"
                 defaultValue={this.props.song.name}
               />
-          
-            <label htmlFor="artist"><h2>Artist: </h2></label>
-             <input
+
+              <label htmlFor="artist"><h2>Artist: </h2></label>
+              <input
                 type="text"
                 onChange={this.handleOnChange}
                 name="artist"
                 defaultValue={artist}
               />
-          </div>
+            </div>
 
-          <div >
-            <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
-             <textarea
-                className = "form-control" rows="20" width="70%"
+            <div >
+              <label htmlFor="lyrics"><h4>Lyrics: </h4></label>
+              <textarea
+                className="form-control" rows="20" width="70%"
                 type="textarea"
                 onChange={this.handleOnChange}
                 name="lyrics"
-                
                 defaultValue={lyrics}
               />
-          </div>
-          <br/>
-          <button type="submit" className="btn btn-success"> Save Song </button>
-        
-        </form>
+            </div>
 
-        {fireRedirect && (
-          <Redirect to={'/song/view'} />
-        )}
+            <br/>
+            
+            <button type="submit" className="btn btn-success"> Save Song </button>
 
-      </div>
+          </form>
+
+          {fireRedirect && (
+            <Redirect to={'/song/view'} />
+          )}
+
+        </div>
       </div>
     )
   }
@@ -101,5 +100,4 @@ export default connect(mapStateToProps, {
   updateSong,
   emptySong,
   currentSong,
-
 })(SongEdit);

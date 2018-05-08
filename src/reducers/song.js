@@ -1,16 +1,16 @@
-export default (state=[], action ) => {
+export default (state = [], action) => {
   console.log(action)
-  switch(action.type) {
+  
+  switch (action.type) {
 
     case 'EMPTY_SONG':
-      return action.song=[];
-   
+      return action.song = [];
+
     case 'CURRENT_SONG':
       return action.song;
 
-
-    default: 
+    default:
       return state;
- }
-}
+  };
+};
 

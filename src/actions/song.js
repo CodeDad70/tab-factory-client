@@ -8,7 +8,6 @@ export const currentSong = (song) => {
 export const emptySong = () => {
   return {
     type: 'EMPTY_SONG',
-    
   }
 }
 

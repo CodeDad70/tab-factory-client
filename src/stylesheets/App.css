@@ -2,12 +2,10 @@
   background-color: #515050;
 }
 
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 30px;
 }
-
 
 .App-title {
   font-size: 1.5em;
@@ -52,10 +50,8 @@
 
 .lyric-field {
   width:70%;
-  color: rgb(255, 255, 255);
-  
+  color: rgb(255, 255, 255); 
   white-space: pre;
-  
 }
 
 .welcome {
@@ -65,10 +61,8 @@
   padding-top: 20px;
   padding-bottom: 100px;
   display: block;
- 
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .Sidebar {
@@ -83,18 +77,15 @@
 }
 
 
-.Logo {
-  
+.Logo { 
   line-height: 5px;
   float: left;
   padding: 10px 0px 15px 10px;
-  
   background-color: #d6d6d6;
   width: 25%;
 }
 
 .welcome-logo {
-  
   display: block;
   background-color: #eee;
   margin-left: auto;
@@ -118,59 +109,30 @@
 }
 
 .link-style {
-  color:  #ffffff;
-  
+  color:  #ffffff; 
 }
 
 .logo-link-style {
-  color:  #000000;
-  
-}
-
-
-input[type="text-chords"]
-{
-    background:#333232;
-    border: 1px;
-    outline: .5px;
-    color:  #ffffff;
-    width: 500px;
-    font-size: 16px;
-}
-
-.chordfont {
-  font-size: 16px;
-  color:  #ffffff;
-}
-
-
-.LyricForm {
-  width: 500px;
-}
-
-.lyric-render{
-  padding-bottom: 100px;
+  color:  #000000; 
 }
 
 .song-card {
-  width: 800px;
- 
-
+  
   --webkit-box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
   box-shadow: 3px 5px 31px 2px rgba(0,0,0,0.75);
 
-border-radius: 10px 10px 10px 10px;
+width: 90%;
+  border-radius: 10px 10px 10px 10px;
 -moz-border-radius: 10px 10px 10px 10px;
 -webkit-border-radius: 10px 10px 10px 10px;
 border: 2px solid #dbdbdb;
-background:  #d6002e; 
-  
+background:  #d6002e;  
 }
 
 .song-card-title {
   text-align: center;
-  width: 796px;
+  
 border-radius: 9px 0px 0px 0px;
 -moz-border-radius: 9px 0px 0px 0px;;
 -webkit-border-radius: 9px 0px 0px 0px;
@@ -181,8 +143,7 @@ border: 2px solid #dbdbdb;
   
 }
 
-.song-card-lyrics {
-  
+.song-card-lyrics { 
   padding-top: 20px;
   padding-left: 20px;
 }
@@ -207,10 +168,7 @@ border: 2px solid #dbdbdb;
   resize: none; 
   outline:none;
   white-space:pre-line;
-	
-
 }
-
 
 .form-layout {
   width: 800px;

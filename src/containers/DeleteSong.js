@@ -7,16 +7,13 @@ import {emptySong} from '../actions/song';
 import DeleteButton from '../components/DeleteButton'
 
 class DeleteSong extends React.Component {
-
   constructor() {
     super();
     this.state = {
       fireRedirect: false,
-   }
+    }
   }
 
-
- 
   handleOnClick = () => {
     this.props.deleteSong(this.props.song);
     this.props.getSongs();
@@ -25,24 +22,17 @@ class DeleteSong extends React.Component {
   }
   
   componentDidMount() {
-    this.props.getSongs();
-
-    
+    this.props.getSongs();  
   }
 
   render() {
     const { fireRedirect } = this.state
-
-
+    
     return (
       <div onClick={this.handleOnClick} >
-
-        
-        <DeleteButton/>
-      
+        <DeleteButton/> 
         {fireRedirect && (
-          
-          <Redirect to={'/'} />
+          <Redirect to={'/'}/>
         )}
       </div>
     )
@@ -57,9 +47,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps,{
   deleteSong,
   getSongs,
-  emptySong,
-  
+  emptySong, 
 })(DeleteSong);
