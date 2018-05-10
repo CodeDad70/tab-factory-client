@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import WelcomeCards from '../components/WelcomeCards';
 import { Link } from 'react-router-dom';
 import { updateCounter } from '../actions/songs';
+import {SongSorter} from '../components/SongSorter';
 
 class WelcomePage extends React.Component {
 
@@ -15,7 +16,7 @@ class WelcomePage extends React.Component {
 
   render() {
 
-    const showAll = this.props.songs.map(song =>
+    const showAll = this.props.songs.sort(SongSorter('name', 'asc')).map(song =>
       <div className="songtab" >
         <div className="song-card">
           <div className="song-card-title">
@@ -51,4 +52,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { updateCounter })(WelcomePage);
+export default connect(mapStateToProps, { updateCounter, SongSorter })(WelcomePage);
