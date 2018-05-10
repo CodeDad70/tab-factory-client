@@ -2,25 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import WelcomeCards from '../components/WelcomeCards';
 import { Link } from 'react-router-dom';
-import { currentSong } from '../actions/song'; 
 import { updateCounter } from '../actions/songs';
+
 
 class WelcomePage extends React.Component {
 
-  handleOnClick(song){
-    
+  handleOnClick(song){   
     console.log(song.id)
     const counterUpdate = Object.assign({}, song, {
       counter: song.counter + 1, id: song.id
     })
-    this.props.updateCounter(counterUpdate)
+    this.props.updateCounter(counterUpdate)   
   }
 
   render() {
     const showAll = this.props.songs.map (song =>          
       <div className = "songtab" >
-        <div className="song-card">
-        
+        <div className="song-card">       
         <div className="song-card-title">
           <h2><i>{song.name}</i> by {song.artist}</h2>
         </div>
@@ -52,14 +50,10 @@ class WelcomePage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    
     songs: state.songs,
   }; 
 };
 
 
 
-export default connect(mapStateToProps, {
-  updateCounter,
-  currentSong,
-})(WelcomePage);
+export default connect(mapStateToProps, {updateCounter})(WelcomePage);

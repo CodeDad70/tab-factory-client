@@ -88,6 +88,7 @@ export const updateCounter = song => {
       .then(response => response.json())
       .then(song => {
         dispatch(currentCount(song))
+        dispatch(getSongs())
       })
       .catch(error => console.log(error))
   }
