@@ -2,6 +2,7 @@ import React from 'react';
 import DeleteSong from '../containers/DeleteSong';
 import EditSong from '../containers/EditSong';
 
+
 class SongCard extends React.Component {
 
   render() {
@@ -13,12 +14,14 @@ class SongCard extends React.Component {
         </div>
 
         <div className="song-card-lyrics">
+       
           <h4>{this.props.song.lyrics}</h4>
         </div >
       
         <div>
           <EditSong/>
           <DeleteSong/>
+          
         </div>
 
      </div>

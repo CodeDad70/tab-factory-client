@@ -30,7 +30,7 @@ class Songform extends React.Component {
     event.preventDefault();
     this.setState({ fireRedirect: true })
     this.props.createSong(this.props.songFormData)
-    this.props.getSongs();
+    //this.props.getSongs();
   }
 
   render() {
@@ -100,6 +100,7 @@ const mapStateToProps = state => {
     songFormData: state.songFormData,
   }
 }
+
 
 export default connect(mapStateToProps, {
   updateSongFormData,

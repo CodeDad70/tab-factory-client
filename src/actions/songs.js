@@ -19,6 +19,13 @@ export const addSong = (song) => {
   }
 }
 
+export const currentCount = (song) => {
+  return {
+    type: 'CURRENT_COUNT',
+    song
+  }
+}
+
 
 //** Async Actions
 export const getSongs = () => {
@@ -64,6 +71,23 @@ export const updateSong = song => {
         dispatch(resetSongEditData())
         dispatch(getSongs())
         dispatch(currentSong(song))
+      })
+      .catch(error => console.log(error))
+  }
+}
+
+export const updateCounter = song => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/songs/${song.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ song: song })
+    })
+      .then(response => response.json())
+      .then(song => {
+        dispatch(currentCount(song))
       })
       .catch(error => console.log(error))
   }

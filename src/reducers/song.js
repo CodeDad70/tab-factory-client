@@ -8,7 +8,10 @@ export default (state = [], action) => {
 
     case 'CURRENT_SONG':
       return action.song;
-
+    
+    case 'CURRENT_COUNT':
+      return action.song;
+        
     default:
       return state;
   };
