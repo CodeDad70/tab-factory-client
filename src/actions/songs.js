@@ -12,6 +12,20 @@ const setSongs = songs => {
   }
 }
 
+export const deleteSongUpdate = song => {
+  return {
+    type: 'DELETE_SONG',
+    song
+  }
+}
+
+const updateSongCounter = song => {
+  return {
+    type: 'UPDATE_SONG_COUNTER',
+    song
+  }
+}
+
 export const addSong = (song) => {
   return {
     type: 'CURRENT_SONG',
@@ -87,15 +101,13 @@ export const updateCounter = song => {
     })
       .then(response => response.json())
       .then(song => {
-        dispatch(currentCount(song))
-        dispatch(getSongs())
+        dispatch(updateSongCounter(song))
       })
       .catch(error => console.log(error))
   }
 }
 
 export const deleteSong = song => {
-
   return dispatch => {
     return fetch(`http://localhost:3001/api/songs/${song.id}`, {
       method: "DELETE",
@@ -106,7 +118,7 @@ export const deleteSong = song => {
     })
       .then(response => response.json())
       .then(song => {
-        dispatch(getSongs())
+        
       })
       .catch(error => console.log(error))
   }

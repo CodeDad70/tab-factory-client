@@ -11,6 +11,7 @@ export default (state = [], action) => {
     
     case 'CURRENT_COUNT':
       return action.song;
+      
         
     default:
       return state;

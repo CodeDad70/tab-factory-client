@@ -9,14 +9,14 @@ class WelcomePage extends React.Component {
 
   handleOnClick(song) {
     const counterUpdate = Object.assign({}, song, {
-      counter: song.counter + 1, id: song.id
-    })
+      counter: song.counter + 1})
     this.props.updateCounter(counterUpdate)
   }
 
+
   render() {
 
-    const showAll = this.props.songs.sort(SongSorter('name', 'asc')).map(song =>
+    const showAll = this.props.songs.sort(SongSorter('count', 'desc')).map(song =>
       <div className="songtab" >
         <div className="song-card">
           <div className="song-card-title">
@@ -25,21 +25,20 @@ class WelcomePage extends React.Component {
 
           <div className="song-card-lyrics">
             <Link className="link-style" key={song.id} to={`/songs/${song.id}`}><h5><i>See lyrics</i></h5></Link>
-            <br />
+            <br/>
 
             <button onClick={() => this.handleOnClick(song)} className="btn btn-primary"> Like This Song </button>
-
-            <br /><br />
+            <br/><br/>
 
             <h4> This song has {song.counter} likes </h4>
           </div >
         </div>
-        <br /><br />
+        <br/><br/>
       </div>
     )
 
     return (
-      <div >
+      <div>
         {showAll}
       </div>
     );

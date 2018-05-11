@@ -18,8 +18,8 @@ const SongList = ({ songs }) => {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    
+  return {   
+    songs: state.songs
   };
 };
 

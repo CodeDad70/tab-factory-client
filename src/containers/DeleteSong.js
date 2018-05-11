@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {deleteSong} from '../actions/songs';
 import { getSongs } from '../actions/songs';
 import {emptySong} from '../actions/song';
+import {deleteSongUpdate} from '../actions/songs';
 import DeleteButton from '../components/DeleteButton'
 
 class DeleteSong extends React.Component {
@@ -15,8 +16,8 @@ class DeleteSong extends React.Component {
   }
 
   handleOnClick = () => {
+    this.props.deleteSongUpdate(this.props.song)
     this.props.deleteSong(this.props.song);
-    this.props.getSongs();
     this.props.emptySong(this.props.song);
     this.setState({ fireRedirect: true })
   }
@@ -50,5 +51,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps,{
   deleteSong,
   getSongs,
-  emptySong, 
+  emptySong,
+  deleteSongUpdate, 
 })(DeleteSong);

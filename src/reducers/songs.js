@@ -6,8 +6,18 @@ export default (state = [], action) => {
       return action.songs;
 
     case 'DELETE_SONG':
-      return action.songs;
-
+      const songs = state.filter(song => song.id !== action.song.id );
+      return songs  
+    
+    case 'UPDATE_SONG_COUNTER':
+      return state.map(song => {
+       if (song.id===action.song.id){
+         return action.song
+      } else {
+        return song
+      }
+      })
+      
     default:
       return state;
   };
