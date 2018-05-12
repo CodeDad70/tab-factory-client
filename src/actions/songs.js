@@ -26,6 +26,13 @@ const updateSongCounter = song => {
   }
 }
 
+const updateSongList = song => {
+  return {
+    type: 'UPDATE_SONG_LIST',
+    song
+  }
+}
+
 export const addSong = (song) => {
   return {
     type: 'CURRENT_SONG',
@@ -83,8 +90,8 @@ export const updateSong = song => {
       .then(response => response.json())
       .then(song => {
         dispatch(resetSongEditData())
-        dispatch(getSongs())
-        dispatch(currentSong(song))
+        dispatch(updateSongList(song))
+        
       })
       .catch(error => console.log(error))
   }
