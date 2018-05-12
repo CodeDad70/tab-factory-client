@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { currentSong } from '../actions/song';
 import SongCard from '../components/SongCard';
 
+
 class ViewPage extends React.Component {
+  
 
   render() {
-    this.props.currentSong(this.props.song);
 
     return (
       <div className='songtab'>

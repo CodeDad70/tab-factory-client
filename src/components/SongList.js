@@ -1,26 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {SongSorter} from './SongSorter';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import {SongSorter} from '../components/SongSorter';
 
-const SongList = ({ songs }) => {
+class SongList extends React.Component {
 
 
-  const renderSongs = songs.map(song =>
-    <Link className="link-style" key={song.id} to={`/songs/${song.id}`}><h5><i>{song.name}</i> by {song.artist} </h5></Link>
-  );
+  render() {
 
-  return (
-    <div >
+    const renderSongs = this.props.songs.map(song =>
+      <Link className="link-style" key={song.id} to={`/songs/${song.id}`}><h5><i>{song.name}</i> by {song.artist} </h5></Link>
+    );
+  
+    
+
+    return (
+      <div>
       {renderSongs}
-    </div>
-  );
-};
-
-const mapStateToProps = (state) => {
-  return {   
-    songs: state.songs
+      </div>
+    );
   };
 };
 
-export default connect(mapStateToProps, { SongSorter })(SongList);
+const mapStateToProps = (state) => {
+  return {
+    songs: state.songs,
+  };
+};
+
+export default connect(mapStateToProps, {SongSorter })(SongList);

@@ -1,11 +1,11 @@
 import { resetSongForm } from './songForm';
 import { resetSongEditData } from './songEdit';
 import { currentSong } from './song';
+import {emptySong} from './song';
 
 
 // **Action Creators
 const setSongs = songs => {
-  console.log("d")
   return {
     type: 'GET_SONGS',
     songs
@@ -26,12 +26,19 @@ const updateSongCounter = song => {
   }
 }
 
-const updateSongList = song => {
+export const updateSongList = song => {
   return {
     type: 'UPDATE_SONG_LIST',
     song
   }
 }
+
+export const refreshSongList = song => {
+  return {
+    type: 'REFRESH_SONG_LIST'
+  }
+}
+
 
 export const addSong = (song) => {
   return {
@@ -71,8 +78,8 @@ export const createSong = song => {
       .then(response => response.json())
       .then(song => {
         dispatch(addSong(song))
+        dispatch(updateSongList(song))
         dispatch(resetSongForm())
-        dispatch(getSongs())
       })
       .catch(error => console.log(error))
   }
@@ -91,7 +98,7 @@ export const updateSong = song => {
       .then(song => {
         dispatch(resetSongEditData())
         dispatch(updateSongList(song))
-        
+        dispatch(currentSong(song))
       })
       .catch(error => console.log(error))
   }
@@ -125,7 +132,8 @@ export const deleteSong = song => {
     })
       .then(response => response.json())
       .then(song => {
-        
+        dispatch(emptySong())
+      
       })
       .catch(error => console.log(error))
   }

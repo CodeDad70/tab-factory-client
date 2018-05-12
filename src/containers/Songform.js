@@ -3,14 +3,11 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux';
 import { updateSongFormData } from '../actions/songForm';
 import { createSong } from '../actions/songs';
-import { getSongs } from '../actions/songs';
+import {updateSongList} from '../actions/songs';
 
 class Songform extends React.Component {
 
-  componentDidMount() {
-    getSongs();
-  }
-
+  
   constructor() {
     super();
     this.state = {
@@ -30,7 +27,7 @@ class Songform extends React.Component {
     event.preventDefault();
     this.setState({ fireRedirect: true })
     this.props.createSong(this.props.songFormData)
-    //this.props.getSongs();
+    this.props.updateSongList(this.props.songFormData)
   }
 
   render() {
@@ -105,5 +102,5 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   updateSongFormData,
   createSong,
-  getSongs,
+  updateSongList,
 })(Songform);

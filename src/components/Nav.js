@@ -24,7 +24,7 @@ class Nav extends Component {
           <Link className="link-style" to={`/new`}><h3>Create a new Tab</h3></Link>
           <h5> or </h5>
           <h4> Select a song: </h4>
-          <SongList songs={songs} />
+          <SongList />
         </div>
 
       </div>

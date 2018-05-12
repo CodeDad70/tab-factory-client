@@ -5,7 +5,10 @@ import SongCard from '../components/SongCard';
 
 class SongsShow extends React.Component {
   render() {
+    
+    
     this.props.currentSong(this.props.song);
+ 
 
     return (
       <div className='songtab'>

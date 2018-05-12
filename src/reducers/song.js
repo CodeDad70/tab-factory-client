@@ -1,3 +1,4 @@
+
 export default (state = [], action) => {
   console.log(action)
   
@@ -11,8 +12,6 @@ export default (state = [], action) => {
     
     case 'CURRENT_COUNT':
       return action.song;
-
-    
       
         
     default:
