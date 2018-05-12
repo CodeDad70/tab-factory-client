@@ -17,8 +17,6 @@ class Songform extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault()
     this.props.createSong(this.props.songFormData, this.props.history)
-
-    this.props.updateSongList(this.props.songFormData)
   }
 
   render() {
@@ -83,5 +81,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   updateSongFormData,
   createSong,
-  updateSongList,
 })(Songform)

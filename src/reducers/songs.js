@@ -17,7 +17,9 @@ export default (state = [], action) => {
           return song
         }
       })
-
+     
+      case 'ADD_SONG':
+        return state.concat(action.song)  
 
     case 'UPDATE_SONG_LIST':
       return state.map(song => {

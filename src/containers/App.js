@@ -6,7 +6,7 @@ import SongsShow from './SongsShow';
 import NavBar from './NavBar';
 import SongEdit from './SongEdit';
 import WelcomePage from './WelcomePage';
-import ViewPage from './ViewPage';
+
 import '../stylesheets/App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -20,8 +20,8 @@ const App = (props) =>
       <Route exact path="/songs/show"  component={SongsShow}/>
       <Route path="/songs" component={SongsPage} />
       <Route exact path="/new" component={Songform} />
-      <Route exact path="/song/edit" component={SongEdit}/>
-      <Route exact path="/song/view" component={ViewPage}/>
+      <Route exact path="/songs/:id/edit" component={SongEdit}/>
+      
     </div>
   </Router>;
 
