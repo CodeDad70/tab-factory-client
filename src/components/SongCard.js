@@ -1,3 +1,4 @@
+
 import React from 'react';
 import DeleteSong from '../containers/DeleteSong';
 import EditSong from '../containers/EditSong';
@@ -20,7 +21,7 @@ class SongCard extends React.Component {
       
         <div>
           <EditSong/>
-          <DeleteSong/>
+          <DeleteSong song={this.props.song}/>
           
         </div>
 
@@ -30,4 +31,3 @@ class SongCard extends React.Component {
 }
 
 export default SongCard;
-

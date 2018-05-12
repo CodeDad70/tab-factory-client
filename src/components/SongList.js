@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const SongList = ({ songs }) => {
 
 
-  const renderSongs = songs.sort(SongSorter('name', 'asc')).map(song =>
+  const renderSongs = songs.map(song =>
     <Link className="link-style" key={song.id} to={`/songs/${song.id}`}><h5><i>{song.name}</i> by {song.artist} </h5></Link>
   );
 

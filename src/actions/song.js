@@ -10,4 +10,3 @@ export const emptySong = () => {
     type: 'EMPTY_SONG',
   }
 }
-

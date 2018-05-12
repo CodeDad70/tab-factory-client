@@ -15,16 +15,15 @@ class DeleteSong extends React.Component {
     }
   }
 
-  handleOnClick = () => {
+  handleOnClick = () => { 
+    this.setState({ fireRedirect: true })
     this.props.deleteSongUpdate(this.props.song)
     this.props.deleteSong(this.props.song);
     this.props.emptySong(this.props.song);
-    this.setState({ fireRedirect: true })
+    
   }
   
-  componentDidMount() {
-    this.props.getSongs();  
-  }
+
 
   render() {
     const { fireRedirect } = this.state
