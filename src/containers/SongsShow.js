@@ -7,7 +7,7 @@ class SongsShow extends React.Component {
   render() {
     return (
       <div className="songtab">
-        <SongCard song={this.props.song} />
+        <SongCard history={this.props.history} song={this.props.song} />
       </div>
     )
   }

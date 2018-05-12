@@ -1,40 +1,25 @@
-import React from 'react';
+import React from 'react'
 import { Redirect } from 'react-router'
-import { connect } from 'react-redux';
-import { deleteSong } from '../actions/songs';
-import { getSongs } from '../actions/songs';
-import { emptySong } from '../actions/song';
-import { deleteSongUpdate } from '../actions/songs';
+import { connect } from 'react-redux'
+import { deleteSong } from '../actions/songs'
 import DeleteButton from '../components/DeleteButton'
-import { refreshSongList } from '../actions/songs';
+import {deleteSongUpdate} from '../actions/songs'
 
 class DeleteSong extends React.Component {
-
   handleOnClick = () => {
-    this.props.deleteSong(this.props.song, this.props.history);
-    this.props.deleteSongUpdate(this.props.song);
+    this.props.deleteSong(this.props.song.id, this.props.history)   
   }
 
-  render(song) {
-
+  render() {
     return (
-
-      <div className="song-card-delete">
-        <button onClick={this.handleOnClick} className="btn btn-danger"> Delete Song </button>
-
+      <div onClick={this.handleOnClick}>
+        <DeleteButton />
       </div>
     )
   }
 }
 
-const mapStateToProps = (song) => {
-  song: song
-}
-
-export default connect(mapStateToProps, {
+export default connect(null, {
   deleteSong,
-  getSongs,
-  emptySong,
   deleteSongUpdate,
-  refreshSongList,
-})(DeleteSong);
+})(DeleteSong)

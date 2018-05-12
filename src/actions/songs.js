@@ -124,18 +124,20 @@ export const updateCounter = song => {
   }
 }
 
-export const deleteSong = (song,history)  => {
+export const deleteSong = (id, history)  => {
+  
   return dispatch => {
-    return fetch(`http://localhost:3001/api/songs/${song.id}`, {
+    return fetch(`http://localhost:3001/api/songs/${id}`, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ song: song })
+      body: JSON.stringify({id: id })
     })
       .then(response => response.json())
-      .then(song => {
+      .then(song => {       
         history.push(`/`)
+        dispatch(deleteSongUpdate(id))
       })
       .catch(error => console.log(error))
   }

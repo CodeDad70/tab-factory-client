@@ -18,7 +18,7 @@ class SongCard extends React.Component {
 
         <div>
           <EditSong id={this.props.song.id} />
-          <DeleteSong song={this.props.song} />
+          <DeleteSong history={this.props.history} song={this.props.song} />
         </div>
       </div>
     )
