@@ -66,19 +66,19 @@ export const getSongs = () => {
   }
 }
 
-export const createSong = song => {
+export const createSong = (song, history) => {
   return dispatch => {
     return fetch('http://localhost:3001/api/songs', {
-      method: "POST",
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ song: song })
+      body: JSON.stringify({ song: song }),
     })
       .then(response => response.json())
       .then(song => {
         dispatch(addSong(song))
-        dispatch(updateSongList(song))
+        history.push(`/songs/${song.id}`)
         dispatch(resetSongForm())
       })
       .catch(error => console.log(error))

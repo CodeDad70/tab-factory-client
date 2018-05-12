@@ -1,11 +1,15 @@
 import React from 'react';
 import DeleteSong from '../containers/DeleteSong';
 import EditSong from '../containers/EditSong';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 class SongCard extends React.Component {
 
   render() {
+    const song = this.props.song
+    debugger
     return (
       <div className="song-card">
         
@@ -19,8 +23,8 @@ class SongCard extends React.Component {
         </div >
       
         <div>
-          <EditSong/>
-          <DeleteSong song={this.props.song}/>
+          <EditSong song={song}/>
+          <DeleteSong song={song}/>
           
         </div>
 
@@ -29,4 +33,10 @@ class SongCard extends React.Component {
   }
 }
 
-export default SongCard;
+const mapStateToProps = (state) => {
+  return {
+    songs: state.songs,
+  };
+};
+
+export default connect(mapStateToProps)(SongCard);

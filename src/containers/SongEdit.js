@@ -32,6 +32,7 @@ class SongEdit extends React.Component {
   }
 
   render() {
+    
     const {fireRedirect} = this.state
     const {artist, lyrics} = this.props.song;
 
