@@ -6,6 +6,7 @@ import SongsShow from './SongsShow';
 import NavBar from './NavBar';
 import SongEdit from './SongEdit';
 import WelcomePage from './WelcomePage';
+import DeleteSong from './DeleteSong';
 
 import '../stylesheets/App.css';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -17,10 +18,12 @@ const App = (props) =>
     <div>  
       <NavBar/>
       <Route exact path="/"  component={WelcomePage}/>
+      <Route exact path="/deleted"  component={WelcomePage}/>
       <Route exact path="/songs/show"  component={SongsShow}/>
       <Route path="/songs" component={SongsPage} />
       <Route exact path="/new" component={Songform} />
-      <Route exact path="/songs/:id/edit" component={SongEdit}/>
+      <Route exact path="/songs/:id/edit" component={SongEdit} />
+      <Route exact path="/songs/:id/delete" component={DeleteSong} />
       
     </div>
   </Router>;

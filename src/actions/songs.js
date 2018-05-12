@@ -1,7 +1,9 @@
+import React from 'react'
 import { resetSongForm } from './songForm';
 import { resetSongEditData } from './songEdit';
 import { currentSong } from './song';
 import {emptySong} from './song';
+
 
 
 // **Action Creators
@@ -86,7 +88,7 @@ export const createSong = (song, history) => {
   }
 }
 
-export const updateSong = song => {
+export const updateSong = (song, history) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/songs/${song.id}`, {
       method: "PATCH",
@@ -97,9 +99,9 @@ export const updateSong = song => {
     })
       .then(response => response.json())
       .then(song => {
-        dispatch(resetSongEditData())
         dispatch(updateSongList(song))
-        dispatch(currentSong(song))
+        history.push(`/songs/${song.id}`)
+        dispatch(resetSongEditData())
       })
       .catch(error => console.log(error))
   }
@@ -122,7 +124,7 @@ export const updateCounter = song => {
   }
 }
 
-export const deleteSong = song => {
+export const deleteSong = (song,history)  => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/songs/${song.id}`, {
       method: "DELETE",
@@ -133,8 +135,7 @@ export const deleteSong = song => {
     })
       .then(response => response.json())
       .then(song => {
-        dispatch(emptySong())
-      
+        history.push(`/`)
       })
       .catch(error => console.log(error))
   }

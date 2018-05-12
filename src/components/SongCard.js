@@ -1,42 +1,28 @@
-import React from 'react';
-import DeleteSong from '../containers/DeleteSong';
-import EditSong from '../containers/EditSong';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-
+import React from 'react'
+import DeleteSong from '../containers/DeleteSong'
+import EditSong from '../containers/EditSong'
 
 class SongCard extends React.Component {
-
   render() {
-    const song = this.props.song
-    
     return (
       <div className="song-card">
-        
         <div className="song-card-title">
-          <h2><i>{song.name}</i> by {song.artist}</h2>
+          <h2>
+            <i>{this.props.song.name}</i> by {this.props.song.artist}
+          </h2>
         </div>
 
         <div className="song-card-lyrics">
-       
-          <h4>{song.lyrics}</h4>
-        </div >
-      
-        <div>
-          <EditSong song={song}/>
-          <DeleteSong song={song}/>
-          
+          <h4>{this.props.song.lyrics}</h4>
         </div>
 
-     </div>
+        <div>
+          <EditSong id={this.props.song.id} />
+          <DeleteSong song={this.props.song} />
+        </div>
+      </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    songs: state.songs,
-  };
-};
-
-export default connect(mapStateToProps)(SongCard);
+export default SongCard

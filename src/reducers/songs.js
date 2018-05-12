@@ -5,8 +5,9 @@ export default (state = [], action) => {
     case 'GET_SONGS':
       return action.songs;
 
-      case 'DELETE_SONG':
-      return state.filter(song => song.id !== action.song.id );
+    case 'DELETE_SONG':
+
+      return state.filter(song => song.id !== action.song.id);
 
 
     case 'UPDATE_SONG_COUNTER':
@@ -17,9 +18,9 @@ export default (state = [], action) => {
           return song
         }
       })
-     
-      case 'ADD_SONG':
-        return state.concat(action.song)  
+
+    case 'ADD_SONG':
+      return state.concat(action.song)
 
     case 'UPDATE_SONG_LIST':
       return state.map(song => {
