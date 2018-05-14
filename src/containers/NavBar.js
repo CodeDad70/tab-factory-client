@@ -24,4 +24,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, {getSongs})(NavBar);
+export default connect(mapStateToProps, { getSongs })(NavBar);

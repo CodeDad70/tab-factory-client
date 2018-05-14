@@ -5,7 +5,7 @@ import { updateSongEditData } from '../actions/songEdit'
 import { updateSong } from '../actions/songs'
 
 class SongEdit extends React.Component {
- 
+
 
   handleOnChange = event => {
     const { name, value } = event.target
@@ -22,13 +22,14 @@ class SongEdit extends React.Component {
   }
 
   render() {
-    
+
     const { artist, lyrics } = this.props.song
 
     return (
       <div className="main-stage">
         <div className="form-layout">
           <form onSubmit={this.handleOnSubmit}>
+            
             <div className="form-inline">
               <label htmlFor="name">
                 <h2>Name: </h2>
@@ -59,12 +60,10 @@ class SongEdit extends React.Component {
             <br />
 
             <button type="submit" className="btn btn-success">
-              {' '}
-              Save Song{' '}
+              Save Song
             </button>
+            
           </form>
-
-         
         </div>
       </div>
     )
@@ -79,7 +78,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     songEditData: state.songEditData,
     song: song,
-
   }
 }
 

@@ -3,7 +3,6 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { updateSongFormData } from '../actions/songForm'
 import { createSong } from '../actions/songs'
-import { updateSongList } from '../actions/songs'
 
 class Songform extends React.Component {
   handleOnChange = event => {
@@ -20,6 +19,7 @@ class Songform extends React.Component {
   }
 
   render() {
+    
     const { name, artist, lyrics } = this.props.songFormData
 
     return (
@@ -28,6 +28,7 @@ class Songform extends React.Component {
           <h1> Create a new tab: </h1>
 
           <form onSubmit={this.handleOnSubmit}>
+            
             <div className="form-inline">
               <label htmlFor="name">
                 <h4>Name: </h4>
@@ -62,9 +63,9 @@ class Songform extends React.Component {
             <br />
 
             <button type="submit" className="btn btn-success">
-              {' '}
-              Create Song{' '}
+              Create Song
             </button>
+            
           </form>
         </div>
       </div>

@@ -3,11 +3,12 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { deleteSong } from '../actions/songs'
 import DeleteButton from '../components/DeleteButton'
-import {deleteSongUpdate} from '../actions/songs'
+import { deleteSongUpdate } from '../actions/songs'
 
 class DeleteSong extends React.Component {
+  
   handleOnClick = () => {
-    this.props.deleteSong(this.props.song.id, this.props.history)   
+    this.props.deleteSong(this.props.song.id, this.props.history)
   }
 
   render() {

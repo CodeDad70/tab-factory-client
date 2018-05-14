@@ -6,14 +6,15 @@ import Songform from '../containers/Songform'
 
 class SongsPage extends Component {
   render() {
-    const match = this.props.match;
     
+    const match = this.props.match;
+
     return (
-      
+
       <div>
         <Switch>
-          <Route exact path={`${match.url}/:songId`} component={SongsShow}/>
-          <Route exact path="/songs/new" component={Songform}/>
+          <Route exact path={`${match.url}/:songId`} component={SongsShow} />
+          <Route exact path="/songs/new" component={Songform} />
         </Switch>
       </div>
 
