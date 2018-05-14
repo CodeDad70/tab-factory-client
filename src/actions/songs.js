@@ -17,10 +17,10 @@ export const addSong = song => {
   }
 }
 
-export const deleteSongUpdate = song => {
+export const deleteSongUpdate = id => {
   return {
     type: 'DELETE_SONG',
-    song
+    id
   }
 }
 
