@@ -20,7 +20,7 @@ class Nav extends Component {
         </div>
 
         <div className="Sidebar">
-          <br/>
+          <br />
           <Link className="link-style" to={`/new`}><h3>Create a new Tab</h3></Link>
           <h5> or </h5>
           <h4> Select a song: </h4>

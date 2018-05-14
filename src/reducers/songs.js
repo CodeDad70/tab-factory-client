@@ -7,7 +7,7 @@ export default (state = [], action) => {
 
     case 'DELETE_SONG':
       return state.filter(song => song.id !== action.id);
-     
+
     case 'UPDATE_SONG_COUNTER':
       return state.map(song => {
         if (song.id === action.song.id) {
