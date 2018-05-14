@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import WelcomeCards from '../components/WelcomeCards';
 import { Link } from 'react-router-dom';
 import { updateCounter } from '../actions/songs';
 import {SongSorter} from '../components/SongSorter';
