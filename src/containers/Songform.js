@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { updateSongFormData } from '../actions/songForm'
 import { createSong } from '../actions/songs'

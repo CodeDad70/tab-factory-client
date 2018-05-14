@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { deleteSong } from '../actions/songs'
 import DeleteButton from '../components/DeleteButton'

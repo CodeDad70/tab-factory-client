@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const SongSorter = (key, order = 'asc') => {
   return function (a, b) {
     if (!a.hasOwnProperty(key) ||
@@ -19,7 +17,7 @@ export const SongSorter = (key, order = 'asc') => {
       comparison = -1;
     }
     return (
-      (order == 'desc') ?
+      (order === 'desc') ?
         (comparison * -1) : comparison
     );
   };

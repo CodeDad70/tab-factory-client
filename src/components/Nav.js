@@ -5,7 +5,6 @@ import SongList from '../components/SongList';
 class Nav extends Component {
 
   render() {
-    const songs = this.props.songs;
     const logo = "gear-logo-icon-92970.png"
 
     return (
