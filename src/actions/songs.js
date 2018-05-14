@@ -10,12 +10,6 @@ const setSongs = songs => {
   }
 }
 
-export const emptySong = () => {
-  return {
-    type: 'EMPTY_SONG',
-  }
-}
-
 export const addSong = song => {
   return {
     type: 'ADD_SONG',
@@ -50,15 +44,6 @@ export const refreshSongList = song => {
   }
 }
 
-
-export const currentCount = (song) => {
-  return {
-    type: 'CURRENT_COUNT',
-    song
-  }
-}
-
-
 //** Async Actions
 export const getSongs = () => {
   return dispatch => {
@@ -69,7 +54,6 @@ export const getSongs = () => {
       .catch(error => console.log(error))
   }
 }
-
 
 export const createSong = (song, history) => {
   return dispatch => {

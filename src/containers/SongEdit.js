@@ -2,7 +2,6 @@ import React from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { updateSongEditData } from '../actions/songEdit'
-import { emptySong } from '../actions/songs'
 import { updateSong } from '../actions/songs'
 
 class SongEdit extends React.Component {
@@ -87,5 +86,4 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(mapStateToProps, {
   updateSongEditData,
   updateSong,
-  emptySong,
 })(SongEdit)
