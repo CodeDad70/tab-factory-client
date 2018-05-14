@@ -38,12 +38,6 @@ export const updateSongList = song => {
   }
 }
 
-export const refreshSongList = song => {
-  return {
-    type: 'REFRESH_SONG_LIST'
-  }
-}
-
 //** Async Actions
 export const getSongs = () => {
   return dispatch => {
