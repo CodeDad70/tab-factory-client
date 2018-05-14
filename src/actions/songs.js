@@ -1,16 +1,18 @@
 import React from 'react'
 import { resetSongForm } from './songForm';
 import { resetSongEditData } from './songEdit';
-import { currentSong } from './song';
-import {emptySong} from './song';
-
-
 
 // **Action Creators
 const setSongs = songs => {
   return {
     type: 'GET_SONGS',
     songs
+  }
+}
+
+export const emptySong = () => {
+  return {
+    type: 'EMPTY_SONG',
   }
 }
 
@@ -124,18 +126,18 @@ export const updateCounter = song => {
   }
 }
 
-export const deleteSong = (id, history)  => {
-  
+export const deleteSong = (id, history) => {
+
   return dispatch => {
     return fetch(`http://localhost:3001/api/songs/${id}`, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({id: id })
+      body: JSON.stringify({ id: id })
     })
       .then(response => response.json())
-      .then(song => {       
+      .then(song => {
         history.push(`/`)
         dispatch(deleteSongUpdate(id))
       })

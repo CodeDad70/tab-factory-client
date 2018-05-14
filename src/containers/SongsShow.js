@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { currentSong } from '../actions/song'
 import SongCard from '../components/SongCard'
 
 class SongsShow extends React.Component {

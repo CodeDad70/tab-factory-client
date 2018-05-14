@@ -2,8 +2,14 @@ export default (state = [], action) => {
 
   switch (action.type) {
 
+    case 'EMPTY_SONG':
+      return action.song = [];
+
     case 'GET_SONGS':
       return action.songs;
+
+    case 'CURRENT_COUNT':
+      return action.song;
 
     case 'DELETE_SONG':
       const song =  state.filter(song => song.id !== action.song);

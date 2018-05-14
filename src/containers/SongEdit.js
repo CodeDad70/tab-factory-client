@@ -2,9 +2,8 @@ import React from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { updateSongEditData } from '../actions/songEdit'
-import { emptySong } from '../actions/song'
+import { emptySong } from '../actions/songs'
 import { updateSong } from '../actions/songs'
-import { currentSong } from '../actions/song'
 
 class SongEdit extends React.Component {
  

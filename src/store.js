@@ -6,14 +6,12 @@ import {
 
 import thunk from 'redux-thunk';
 import songs from './reducers/songs';
-import song from './reducers/song';
 import songFormData from './reducers/songFormData';
 import songEditData from './reducers/songEditData';
 
 const reducers = combineReducers({
   songs,
   songFormData,
-  song,
   songEditData,
 });
 
